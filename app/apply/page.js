@@ -59,7 +59,7 @@ export default function ApplyPage() {
   };
 
   return (
-    <Box minH="100vh" bg="#EEF2F6" display="flex" flexDirection="column">
+    <Box minH="100vh" bg="transparent" position="relative" zIndex={1} display="flex" flexDirection="column">
       <Navbar />
 
       {/* Hero Header */}
@@ -68,7 +68,7 @@ export default function ApplyPage() {
         pb={{ base: 10, md: 14 }}
         px={{ base: 4, sm: 6, md: 12 }}
         textAlign="center"
-        bg="linear-gradient(180deg, rgba(0, 32, 69, 0.04) 0%, rgba(253, 251, 247, 0) 100%)"
+        bg="linear-gradient(180deg, rgba(51, 43, 31, 0.04) 0%, rgba(253, 251, 247, 0) 100%)"
       >
         <Box maxW="3xl" mx="auto">
           <Flex
@@ -78,16 +78,16 @@ export default function ApplyPage() {
             px={4}
             py={1.5}
             rounded="full"
-            bg="rgba(255, 184, 0, 0.15)"
-            border="1px solid rgba(255, 184, 0, 0.3)"
+            bg="rgba(152, 21, 9, 0.15)"
+            border="1px solid rgba(152, 21, 9, 0.3)"
             mb={4}
           >
-            <Box as="span" className="material-symbols-outlined" color="#D4AF37" fontSize="sm">
+            <Box as="span" className="material-symbols-outlined" color="#981509" fontSize="sm">
               school
             </Box>
             <Text
               as="span"
-              color="#002045"
+              color="#332b1f"
               fontWeight="bold"
               fontSize="xs"
               letterSpacing="wider"
@@ -101,7 +101,7 @@ export default function ApplyPage() {
             as="h1"
             fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
             fontWeight="800"
-            color="#002045"
+            color="#332b1f"
             lineHeight="1.15"
             letterSpacing="tight"
             mb={4}
@@ -109,7 +109,7 @@ export default function ApplyPage() {
             Подать заявку на поступление
           </Heading>
 
-          <Text color="#64748B" fontSize={{ base: "sm", md: "lg" }} maxW="2xl" mx="auto">
+          <Text color="#6b6154" fontSize={{ base: "sm", md: "lg" }} maxW="2xl" mx="auto">
             Оставьте заявку, чтобы получить персональную консультацию, узнать условия поступления или записаться на экскурсию по школе.
           </Text>
         </Box>
@@ -125,8 +125,8 @@ export default function ApplyPage() {
               backdropFilter="blur(20px)"
               p={{ base: 6, sm: 8, md: 10 }}
               rounded="3xl"
-              border="1px solid rgba(0, 32, 69, 0.08)"
-              boxShadow="0 10px 40px -10px rgba(0, 32, 69, 0.06)"
+              border="1px solid rgba(51, 43, 31, 0.08)"
+              boxShadow="0 10px 40px -10px rgba(51, 43, 31, 0.06)"
             >
               {submitted ? (
                 <VStack spacing={6} py={12} textAlign="center">
@@ -146,10 +146,10 @@ export default function ApplyPage() {
                     </Box>
                   </Flex>
                   <Box>
-                    <Heading as="h3" fontSize="2xl" color="#002045" mb={2}>
+                    <Heading as="h3" fontSize="2xl" color="#332b1f" mb={2}>
                       Спасибо! Заявка принята
                     </Heading>
-                    <Text color="#64748B" fontSize="md" maxW="md">
+                    <Text color="#6b6154" fontSize="md" maxW="md">
                       Мы получили ваше обращение. Наш координатор свяжется с вами по указанному номеру в течение рабочего дня.
                     </Text>
                   </Box>
@@ -167,8 +167,8 @@ export default function ApplyPage() {
                     }}
                     variant="outline"
                     rounded="full"
-                    color="#002045"
-                    borderColor="#002045"
+                    color="#332b1f"
+                    borderColor="#332b1f"
                     px={8}
                   >
                     Отправить еще одну заявку
@@ -185,7 +185,7 @@ export default function ApplyPage() {
 
                     {/* Purpose Selection */}
                     <Box>
-                      <Text fontWeight="bold" fontSize="sm" color="#002045" mb={2}>
+                      <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={2}>
                         Цель обращения
                       </Text>
                       <Grid templateColumns={{ base: "repeat(2, 1fr)", sm: "repeat(4, 1fr)" }} gap={2}>
@@ -205,13 +205,13 @@ export default function ApplyPage() {
                               py={5}
                               fontSize="xs"
                               fontWeight="bold"
-                              bg={active ? "#002045" : "white"}
-                              color={active ? "white" : "#64748B"}
+                              bg={active ? "#981509" : "white"}
+                              color={active ? "white" : "#6b6154"}
                               border="1px solid"
-                              borderColor={active ? "#002045" : "gray.200"}
+                              borderColor={active ? "#981509" : "gray.200"}
                               _hover={{
-                                bg: active ? "#001530" : "gray.50",
-                                color: active ? "white" : "#002045",
+                                bg: active ? "#191714" : "gray.50",
+                                color: active ? "white" : "#332b1f",
                               }}
                               onClick={() => setFormData({ ...formData, type: t.id })}
                             >
@@ -224,7 +224,7 @@ export default function ApplyPage() {
 
                     {/* Full Name */}
                     <Box>
-                      <Text fontWeight="bold" fontSize="sm" color="#002045" mb={1.5}>
+                      <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={1.5}>
                         Ваше имя (родитель / опекун) *
                       </Text>
                       <Input
@@ -237,14 +237,14 @@ export default function ApplyPage() {
                         rounded="xl"
                         bg="white"
                         borderColor="gray.200"
-                        _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+                        _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
                       />
                     </Box>
 
                     {/* Phone and Email */}
                     <Grid templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }} gap={4}>
                       <Box>
-                        <Text fontWeight="bold" fontSize="sm" color="#002045" mb={1.5}>
+                        <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={1.5}>
                           Номер телефона *
                         </Text>
                         <Input
@@ -257,12 +257,12 @@ export default function ApplyPage() {
                           rounded="xl"
                           bg="white"
                           borderColor="gray.200"
-                          _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+                          _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
                         />
                       </Box>
 
                       <Box>
-                        <Text fontWeight="bold" fontSize="sm" color="#002045" mb={1.5}>
+                        <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={1.5}>
                           Email (необязательно)
                         </Text>
                         <Input
@@ -276,14 +276,14 @@ export default function ApplyPage() {
                           rounded="xl"
                           bg="white"
                           borderColor="gray.200"
-                          _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+                          _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
                         />
                       </Box>
                     </Grid>
 
                     {/* Grade / Age */}
                     <Box>
-                      <Text fontWeight="bold" fontSize="sm" color="#002045" mb={1.5}>
+                      <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={1.5}>
                         Класс / Возраст ребенка
                       </Text>
                       <select
@@ -292,10 +292,10 @@ export default function ApplyPage() {
                           height: "48px",
                           borderRadius: "12px",
                           backgroundColor: "#FFFFFF",
-                          border: "1px solid #E2E8F0",
+                          border: "1px solid #e7e0d2",
                           padding: "0 16px",
                           fontSize: "14px",
-                          color: "#1E293B",
+                          color: "#332b1f",
                           outline: "none",
                         }}
                         value={formData.childGrade}
@@ -315,7 +315,7 @@ export default function ApplyPage() {
 
                     {/* Comments */}
                     <Box>
-                      <Text fontWeight="bold" fontSize="sm" color="#002045" mb={1.5}>
+                      <Text fontWeight="bold" fontSize="sm" color="#332b1f" mb={1.5}>
                         Комментарий или вопрос (необязательно)
                       </Text>
                       <Textarea
@@ -328,7 +328,7 @@ export default function ApplyPage() {
                         rounded="xl"
                         bg="white"
                         borderColor="gray.200"
-                        _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+                        _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
                       />
                     </Box>
 
@@ -336,15 +336,15 @@ export default function ApplyPage() {
                       type="submit"
                       size="lg"
                       h="56px"
-                      bg="#FFB800"
-                      color="#002045"
+                      bg="#981509"
+                      color="#ffffff"
                       fontWeight="800"
                       fontSize="md"
                       rounded="full"
                       isLoading={loading}
                       loadingText="Отправка заявки..."
-                      boxShadow="0 10px 25px -5px rgba(255, 184, 0, 0.4)"
-                      _hover={{ bg: "#e6a600", transform: "translateY(-1px)" }}
+                      boxShadow="0 10px 25px -5px rgba(152, 21, 9, 0.4)"
+                      _hover={{ bg: "#7c1006", transform: "translateY(-1px)" }}
                       transition="all 0.2s"
                     >
                       Отправить заявку
@@ -364,18 +364,18 @@ export default function ApplyPage() {
             <VStack spacing={6} align="stretch">
               {/* Highlight Card */}
               <Box
-                bg="#002045"
+                bg="#11100e"
                 color="white"
                 p={{ base: 6, sm: 8 }}
                 rounded="3xl"
-                boxShadow="0 10px 30px -10px rgba(0, 32, 69, 0.2)"
+                boxShadow="0 10px 30px -10px rgba(51, 43, 31, 0.2)"
               >
-                <Heading as="h3" fontSize="xl" fontWeight="bold" mb={3} color="#FFB800">
+                <Heading as="h3" fontSize="xl" fontWeight="bold" mb={3} color="#981509">
                   Почему стоит подать заявку прямо сейчас?
                 </Heading>
                 <VStack align="flex-start" spacing={4} mt={4}>
                   <Flex align="flex-start" gap={3}>
-                    <Box as="span" className="material-symbols-outlined" color="#FFB800" mt={0.5}>
+                    <Box as="span" className="material-symbols-outlined" color="#981509" mt={0.5}>
                       done
                     </Box>
                     <Text fontSize="sm" color="gray.200">
@@ -383,7 +383,7 @@ export default function ApplyPage() {
                     </Text>
                   </Flex>
                   <Flex align="flex-start" gap={3}>
-                    <Box as="span" className="material-symbols-outlined" color="#FFB800" mt={0.5}>
+                    <Box as="span" className="material-symbols-outlined" color="#981509" mt={0.5}>
                       done
                     </Box>
                     <Text fontSize="sm" color="gray.200">
@@ -391,7 +391,7 @@ export default function ApplyPage() {
                     </Text>
                   </Flex>
                   <Flex align="flex-start" gap={3}>
-                    <Box as="span" className="material-symbols-outlined" color="#FFB800" mt={0.5}>
+                    <Box as="span" className="material-symbols-outlined" color="#981509" mt={0.5}>
                       done
                     </Box>
                     <Text fontSize="sm" color="gray.200">
@@ -406,9 +406,9 @@ export default function ApplyPage() {
                 bg="white"
                 p={{ base: 6, sm: 8 }}
                 rounded="3xl"
-                border="1px solid rgba(0, 32, 69, 0.08)"
+                border="1px solid rgba(51, 43, 31, 0.08)"
               >
-                <Heading as="h4" fontSize="lg" fontWeight="bold" color="#002045" mb={4}>
+                <Heading as="h4" fontSize="lg" fontWeight="bold" color="#332b1f" mb={4}>
                   Связаться с нами напрямую
                 </Heading>
                 <VStack align="flex-start" spacing={4}>
@@ -417,10 +417,10 @@ export default function ApplyPage() {
                       w={10}
                       h={10}
                       rounded="xl"
-                      bg="rgba(0, 32, 69, 0.06)"
+                      bg="rgba(51, 43, 31, 0.06)"
                       align="center"
                       justify="center"
-                      color="#002045"
+                      color="#332b1f"
                     >
                       <Box as="span" className="material-symbols-outlined" fontSize="sm">
                         call
@@ -432,7 +432,7 @@ export default function ApplyPage() {
                         as="a"
                         href="tel:+998913259565"
                         fontWeight="bold"
-                        color="#002045"
+                        color="#332b1f"
                         display="block"
                         _hover={{ color: "blue.600" }}
                       >
@@ -457,10 +457,10 @@ export default function ApplyPage() {
                       w={10}
                       h={10}
                       rounded="xl"
-                      bg="rgba(0, 32, 69, 0.06)"
+                      bg="rgba(51, 43, 31, 0.06)"
                       align="center"
                       justify="center"
-                      color="#002045"
+                      color="#332b1f"
                     >
                       <Box as="span" className="material-symbols-outlined" fontSize="sm">
                         location_on
@@ -468,7 +468,7 @@ export default function ApplyPage() {
                     </Flex>
                     <Box>
                       <Text fontSize="xs" color="gray.500">Адрес школы</Text>
-                      <Text fontWeight="bold" color="#002045" fontSize="sm">
+                      <Text fontWeight="bold" color="#332b1f" fontSize="sm">
                         г. Фергана, ул. Мустакиллик, 228
                       </Text>
                     </Box>
@@ -479,10 +479,10 @@ export default function ApplyPage() {
                       w={10}
                       h={10}
                       rounded="xl"
-                      bg="rgba(0, 32, 69, 0.06)"
+                      bg="rgba(51, 43, 31, 0.06)"
                       align="center"
                       justify="center"
-                      color="#002045"
+                      color="#332b1f"
                     >
                       <Box as="span" className="material-symbols-outlined" fontSize="sm">
                         schedule
@@ -490,7 +490,7 @@ export default function ApplyPage() {
                     </Flex>
                     <Box>
                       <Text fontSize="xs" color="gray.500">График работы</Text>
-                      <Text fontWeight="bold" color="#002045" fontSize="sm">
+                      <Text fontWeight="bold" color="#332b1f" fontSize="sm">
                         Пн - Сб: 08:30 – 17:30
                       </Text>
                     </Box>

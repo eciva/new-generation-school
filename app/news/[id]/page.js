@@ -64,7 +64,7 @@ export default function SingleNewsPage() {
     : "/bg.png";
 
   return (
-    <Box minH="100vh" bg="#EEF2F6" display="flex" flexDirection="column">
+    <Box minH="100vh" bg="transparent" position="relative" zIndex={1} display="flex" flexDirection="column">
       <Navbar />
 
       <Box pt={{ base: 28, md: 36 }} pb={20} px={{ base: 4, sm: 6, md: 12 }} flex={1}>
@@ -76,14 +76,14 @@ export default function SingleNewsPage() {
                 align="center"
                 gap={2}
                 display="inline-flex"
-                color="#002045"
+                color="#332b1f"
                 fontWeight="bold"
                 fontSize="sm"
                 px={4}
                 py={2}
                 rounded="full"
                 bg="white"
-                border="1px solid rgba(0, 32, 69, 0.08)"
+                border="1px solid rgba(51, 43, 31, 0.08)"
                 boxShadow="sm"
                 _hover={{ bg: "gray.50", transform: "translateX(-2px)" }}
                 transition="all 0.2s"
@@ -98,7 +98,7 @@ export default function SingleNewsPage() {
 
           {loading ? (
             <Flex justify="center" align="center" minH="350px">
-              <Spinner size="xl" color="#002045" thickness="4px" />
+              <Spinner size="xl" color="#332b1f" thickness="4px" />
             </Flex>
           ) : !article ? (
             <Box
@@ -107,24 +107,24 @@ export default function SingleNewsPage() {
               px={6}
               bg="white"
               rounded="3xl"
-              border="1px solid rgba(0, 32, 69, 0.06)"
+              border="1px solid rgba(51, 43, 31, 0.06)"
             >
-              <Box as="span" className="material-symbols-outlined" fontSize="5xl" color="#D4AF37" mb={4} display="block">
+              <Box as="span" className="material-symbols-outlined" fontSize="5xl" color="#981509" mb={4} display="block">
                 article
               </Box>
-              <Heading as="h2" fontSize="2xl" color="#002045" mb={3}>
+              <Heading as="h2" fontSize="2xl" color="#332b1f" mb={3}>
                 Новость не найдена
               </Heading>
-              <Text color="#64748B" mb={6}>
+              <Text color="#6b6154" mb={6}>
                 Возможно, эта публикация была удалена или перенесена.
               </Text>
               <Button
                 as={Link}
                 href="/news"
-                bg="#002045"
+                bg="#11100e"
                 color="white"
                 rounded="full"
-                _hover={{ bg: "#001530" }}
+                _hover={{ bg: "#191714" }}
               >
                 Вернуться к списку новостей
               </Button>
@@ -134,8 +134,8 @@ export default function SingleNewsPage() {
               {/* Meta tags */}
               <Flex align="center" gap={3} mb={4} wrap="wrap">
                 <Box
-                  bg="rgba(0, 32, 69, 0.08)"
-                  color="#002045"
+                  bg="rgba(51, 43, 31, 0.08)"
+                  color="#332b1f"
                   fontSize="xs"
                   fontWeight="bold"
                   textTransform="uppercase"
@@ -146,7 +146,7 @@ export default function SingleNewsPage() {
                 >
                   {article.category || "Новость"}
                 </Box>
-                <Text fontSize="sm" color="#64748B" fontWeight="medium">
+                <Text fontSize="sm" color="#6b6154" fontWeight="medium">
                   {formatDate(article.date || article.createdAt)}
                 </Text>
               </Flex>
@@ -156,7 +156,7 @@ export default function SingleNewsPage() {
                 as="h1"
                 fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
                 fontWeight="800"
-                color="#002045"
+                color="#332b1f"
                 lineHeight="1.2"
                 letterSpacing="tight"
                 mb={6}
@@ -168,7 +168,7 @@ export default function SingleNewsPage() {
               {article.excerpt && (
                 <Text
                   fontSize={{ base: "md", md: "xl" }}
-                  color="#64748B"
+                  color="#6b6154"
                   lineHeight="relaxed"
                   mb={8}
                   fontWeight="medium"
@@ -183,8 +183,8 @@ export default function SingleNewsPage() {
                   rounded="3xl"
                   overflow="hidden"
                   mb={10}
-                  boxShadow="0 10px 30px -10px rgba(0, 32, 69, 0.12)"
-                  border="1px solid rgba(0, 32, 69, 0.08)"
+                  boxShadow="0 10px 30px -10px rgba(51, 43, 31, 0.12)"
+                  border="1px solid rgba(51, 43, 31, 0.08)"
                   maxH="500px"
                   bg="gray.100"
                 >
@@ -205,10 +205,10 @@ export default function SingleNewsPage() {
                 bg="white"
                 p={{ base: 6, sm: 8, md: 12 }}
                 rounded="3xl"
-                border="1px solid rgba(0, 32, 69, 0.06)"
-                boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.03)"
+                border="1px solid rgba(51, 43, 31, 0.06)"
+                boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.03)"
                 fontSize={{ base: "md", md: "lg" }}
-                color="#334155"
+                color="#4f463a"
                 lineHeight="tall"
                 whiteSpace="pre-line"
               >
@@ -220,7 +220,7 @@ export default function SingleNewsPage() {
                 mt={12}
                 p={{ base: 6, md: 8 }}
                 rounded="3xl"
-                bg="#002045"
+                bg="#11100e"
                 color="white"
                 display="flex"
                 flexDirection={{ base: "column", sm: "row" }}
@@ -239,13 +239,13 @@ export default function SingleNewsPage() {
                 <Button
                   as={Link}
                   href="/apply"
-                  bg="#FFB800"
-                  color="#002045"
+                  bg="#981509"
+                  color="#ffffff"
                   fontWeight="bold"
                   rounded="full"
                   px={8}
                   py={6}
-                  _hover={{ bg: "#e6a600" }}
+                  _hover={{ bg: "#7c1006" }}
                   flexShrink={0}
                 >
                   Подать заявку

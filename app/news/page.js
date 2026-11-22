@@ -82,7 +82,7 @@ export default function AllNewsPage() {
   };
 
   return (
-    <Box minH="100vh" bg="#EEF2F6" display="flex" flexDirection="column">
+    <Box minH="100vh" bg="transparent" position="relative" zIndex={1} display="flex" flexDirection="column">
       <Navbar />
 
       {/* Hero Header */}
@@ -91,7 +91,7 @@ export default function AllNewsPage() {
         pb={{ base: 12, md: 16 }}
         px={{ base: 4, sm: 6, md: 12 }}
         textAlign="center"
-        bg="linear-gradient(180deg, rgba(0, 32, 69, 0.04) 0%, rgba(253, 251, 247, 0) 100%)"
+        bg="linear-gradient(180deg, rgba(51, 43, 31, 0.04) 0%, rgba(253, 251, 247, 0) 100%)"
       >
         <Box maxW="4xl" mx="auto">
           <Flex
@@ -101,16 +101,16 @@ export default function AllNewsPage() {
             px={4}
             py={1.5}
             rounded="full"
-            bg="rgba(255, 184, 0, 0.15)"
-            border="1px solid rgba(255, 184, 0, 0.3)"
+            bg="rgba(152, 21, 9, 0.15)"
+            border="1px solid rgba(152, 21, 9, 0.3)"
             mb={4}
           >
-            <Box as="span" className="material-symbols-outlined" color="#D4AF37" fontSize="sm">
+            <Box as="span" className="material-symbols-outlined" color="#981509" fontSize="sm">
               newspaper
             </Box>
             <Text
               as="span"
-              color="#002045"
+              color="#332b1f"
               fontWeight="bold"
               fontSize="xs"
               letterSpacing="wider"
@@ -124,7 +124,7 @@ export default function AllNewsPage() {
             as="h1"
             fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
             fontWeight="800"
-            color="#002045"
+            color="#332b1f"
             lineHeight="1.15"
             letterSpacing="tight"
             mb={4}
@@ -132,7 +132,7 @@ export default function AllNewsPage() {
             Жизнь New Generation School
           </Heading>
 
-          <Text color="#64748B" fontSize={{ base: "sm", md: "lg" }} maxW="2xl" mx="auto">
+          <Text color="#6b6154" fontSize={{ base: "sm", md: "lg" }} maxW="2xl" mx="auto">
             Следите за ключевыми событиями, академическими победами, поездками и важными объявлениями нашей школы.
           </Text>
         </Box>
@@ -149,8 +149,8 @@ export default function AllNewsPage() {
           backdropFilter="blur(16px)"
           p={4}
           rounded="2xl"
-          border="1px solid rgba(0, 32, 69, 0.08)"
-          boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.04)"
+          border="1px solid rgba(51, 43, 31, 0.08)"
+          boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.04)"
         >
           {/* Category Tabs */}
           <HStack spacing={2} overflowX="auto" py={1}>
@@ -164,11 +164,11 @@ export default function AllNewsPage() {
                   px={4}
                   fontWeight="bold"
                   fontSize="xs"
-                  bg={isSelected ? "#002045" : "transparent"}
-                  color={isSelected ? "white" : "#64748B"}
+                  bg={isSelected ? "#981509" : "transparent"}
+                  color={isSelected ? "white" : "#6b6154"}
                   _hover={{
-                    bg: isSelected ? "#001530" : "rgba(0, 32, 69, 0.05)",
-                    color: isSelected ? "white" : "#002045",
+                    bg: isSelected ? "#191714" : "rgba(51, 43, 31, 0.05)",
+                    color: isSelected ? "white" : "#332b1f",
                   }}
                   onClick={() => {
                     setSelectedCategory(cat.id);
@@ -210,7 +210,7 @@ export default function AllNewsPage() {
               bg="white"
               border="1px solid"
               borderColor="gray.200"
-              _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+              _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
             />
           </Box>
         </Flex>
@@ -220,7 +220,7 @@ export default function AllNewsPage() {
       <Box maxW="7xl" mx="auto" w="full" px={{ base: 4, sm: 6, md: 12 }} flex={1} pb={16}>
         {loading ? (
           <Flex justify="center" align="center" minH="300px">
-            <Spinner size="xl" color="#002045" thickness="4px" />
+            <Spinner size="xl" color="#332b1f" thickness="4px" />
           </Flex>
         ) : news.length === 0 ? (
           <Box
@@ -229,22 +229,22 @@ export default function AllNewsPage() {
             px={4}
             bg="white"
             rounded="3xl"
-            border="1px solid rgba(0, 32, 69, 0.06)"
+            border="1px solid rgba(51, 43, 31, 0.06)"
           >
             <Box
               as="span"
               className="material-symbols-outlined"
               fontSize="5xl"
-              color="#D4AF37"
+              color="#981509"
               mb={4}
               display="block"
             >
               find_in_page
             </Box>
-            <Heading as="h3" fontSize="xl" color="#002045" mb={2}>
+            <Heading as="h3" fontSize="xl" color="#332b1f" mb={2}>
               Новостей не найдено
             </Heading>
-            <Text color="#64748B" fontSize="sm" maxW="md" mx="auto">
+            <Text color="#6b6154" fontSize="sm" maxW="md" mx="auto">
               Попробуйте изменить категорию или поисковый запрос.
             </Text>
           </Box>
@@ -276,8 +276,8 @@ export default function AllNewsPage() {
                       bg="white"
                       rounded="3xl"
                       overflow="hidden"
-                      border="1px solid rgba(0, 32, 69, 0.08)"
-                      boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.04)"
+                      border="1px solid rgba(51, 43, 31, 0.08)"
+                      boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.04)"
                       h="full"
                       display="flex"
                       flexDirection="column"
@@ -285,8 +285,8 @@ export default function AllNewsPage() {
                       role="group"
                       _hover={{
                         transform: "translateY(-6px)",
-                        boxShadow: "0 20px 35px -10px rgba(0, 32, 69, 0.12)",
-                        borderColor: "rgba(255, 184, 0, 0.4)",
+                        boxShadow: "0 20px 35px -10px rgba(51, 43, 31, 0.12)",
+                        borderColor: "rgba(152, 21, 9, 0.4)",
                       }}
                     >
                       {/* Image Frame */}
@@ -306,7 +306,7 @@ export default function AllNewsPage() {
                           position="absolute"
                           top={4}
                           left={4}
-                          bg="rgba(0, 32, 69, 0.85)"
+                          bg="rgba(51, 43, 31, 0.85)"
                           backdropFilter="blur(8px)"
                           color="white"
                           fontSize="2xs"
@@ -324,7 +324,7 @@ export default function AllNewsPage() {
                       {/* Content */}
                       <VStack align="flex-start" spacing={3} p={6} flex={1} justify="space-between">
                         <Box w="full">
-                          <Text fontSize="xs" color="#D4AF37" fontWeight="bold" mb={2}>
+                          <Text fontSize="xs" color="#981509" fontWeight="bold" mb={2}>
                             {formatDate(item.date || item.createdAt)}
                           </Text>
 
@@ -332,7 +332,7 @@ export default function AllNewsPage() {
                             as="h3"
                             fontSize="lg"
                             fontWeight="bold"
-                            color="#002045"
+                            color="#332b1f"
                             lineHeight="1.3"
                             mb={2}
                             noOfLines={2}
@@ -340,7 +340,7 @@ export default function AllNewsPage() {
                             {item.title}
                           </Heading>
 
-                          <Text fontSize="sm" color="#64748B" lineHeight="relaxed" noOfLines={3}>
+                          <Text fontSize="sm" color="#6b6154" lineHeight="relaxed" noOfLines={3}>
                             {item.excerpt || item.body?.replace(/<[^>]*>?/gm, "").substring(0, 120) || ""}
                           </Text>
                         </Box>
@@ -350,10 +350,10 @@ export default function AllNewsPage() {
                             <Flex
                               align="center"
                               justify="space-between"
-                              color="#002045"
+                              color="#332b1f"
                               fontWeight="bold"
                               fontSize="sm"
-                              _hover={{ color: "#D4AF37" }}
+                              _hover={{ color: "#981509" }}
                               transition="color 0.2s"
                             >
                               <Text>Читать полностью</Text>
@@ -380,7 +380,7 @@ export default function AllNewsPage() {
                   disabled={page <= 1}
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   borderColor="gray.300"
-                  color="#002045"
+                  color="#332b1f"
                   _hover={{ bg: "gray.100" }}
                 >
                   <Box as="span" className="material-symbols-outlined" fontSize="sm">
@@ -397,11 +397,11 @@ export default function AllNewsPage() {
                     w={9}
                     h={9}
                     p={0}
-                    bg={p === page ? "#002045" : "white"}
-                    color={p === page ? "white" : "#002045"}
+                    bg={p === page ? "#981509" : "white"}
+                    color={p === page ? "white" : "#332b1f"}
                     border="1px solid"
-                    borderColor={p === page ? "#002045" : "gray.200"}
-                    _hover={{ bg: p === page ? "#001530" : "gray.50" }}
+                    borderColor={p === page ? "#981509" : "gray.200"}
+                    _hover={{ bg: p === page ? "#191714" : "gray.50" }}
                     onClick={() => setPage(p)}
                   >
                     {p}
@@ -415,7 +415,7 @@ export default function AllNewsPage() {
                   disabled={page >= meta.totalPages}
                   onClick={() => setPage((p) => Math.min(meta.totalPages, p + 1))}
                   borderColor="gray.300"
-                  color="#002045"
+                  color="#332b1f"
                   _hover={{ bg: "gray.100" }}
                 >
                   Вперед

@@ -7,20 +7,20 @@ export default function LocationMap() {
     <Box
       as="section"
       id="location"
-      py={10}
+      py={12}
       px={{ base: 6, md: 12 }}
       maxW="7xl"
       mx="auto"
     >
-      <Box textAlign="center" mb={16}>
+      <Box textAlign="center" mb={14}>
         <Text
           as="span"
           display="block"
-          color="#fdbb31"
-          fontWeight="bold"
-          letterSpacing="wider"
+          color="#981509"
+          fontWeight="700"
+          letterSpacing="0.14em"
           textTransform="uppercase"
-          fontSize="sm"
+          fontSize="xs"
           mb={2}
         >
           Контакты
@@ -28,13 +28,14 @@ export default function LocationMap() {
         <Heading
           as="h2"
           fontFamily="heading"
-          fontSize={{ base: "4xl", md: "5xl" }}
-          fontWeight="bold"
-          color="#002045"
+          fontSize={{ base: "3xl", md: "5xl" }}
+          fontWeight="800"
+          color="#332b1f"
+          letterSpacing="-0.025em"
         >
           Наше местоположение
         </Heading>
-        <Text color="#64748B" mt={4} maxW="2xl" mx="auto" fontSize="lg">
+        <Text color="#6b6154" mt={4} maxW="2xl" mx="auto" fontSize="lg">
           Приходите к нам в гости и познакомьтесь со школой лично
         </Text>
       </Box>
@@ -65,17 +66,17 @@ export default function LocationMap() {
           w={96}
           className="glass-panel"
           p={6}
-          rounded="3xl"
-          boxShadow="premium"
-          border="1px solid rgba(255,255,255,0.5)"
+          rounded="2xl"
+          boxShadow="0 20px 44px -14px rgba(51, 43, 31, 0.2)"
+          border="1px solid #e7e0d2"
           pointerEvents="none"
         >
           <Flex align="flex-start" gap={4}>
             <Flex
               w={12}
               h={12}
-              rounded="2xl"
-              bg="#002045"
+              rounded="xl"
+              bg="#981509"
               align="center"
               justify="center"
               flexShrink={0}
@@ -83,16 +84,16 @@ export default function LocationMap() {
               <Box
                 as="span"
                 className="material-symbols-outlined"
-                color="#fdbb31"
+                color="#f3ead6"
               >
                 location_on
               </Box>
             </Flex>
             <Box>
-              <Text fontWeight="bold" color="#002045" mb={1}>
+              <Text fontWeight="800" color="#332b1f" mb={1}>
                 New Generation School
               </Text>
-              <Text fontSize="sm" color="#64748B">
+              <Text fontSize="sm" color="#6b6154">
                 г. Фергана, ул. Мустакиллик, 228
               </Text>
               <Flex
@@ -100,8 +101,8 @@ export default function LocationMap() {
                 align="center"
                 gap={2}
                 fontSize="xs"
-                fontWeight="bold"
-                color="#002045"
+                fontWeight="700"
+                color="#1f6e43"
                 textTransform="uppercase"
                 letterSpacing="wider"
               >
@@ -109,7 +110,7 @@ export default function LocationMap() {
                   w={2}
                   h={2}
                   rounded="full"
-                  bg="green.500"
+                  bg="#1f6e43"
                   className="pulse-dot"
                 />
                 Открыто сейчас
@@ -124,18 +125,17 @@ export default function LocationMap() {
         display={{ base: "block", md: "none" }}
         mt={4}
         p={5}
-        bg="white"
+        bg="rgba(255, 255, 255, 0.92)"
         rounded="2xl"
-        border="1px solid"
-        borderColor="gray.100"
-        boxShadow="sm"
+        border="1px solid #e7e0d2"
+        boxShadow="0 8px 20px -6px rgba(51, 43, 31, 0.08)"
       >
         <Flex align="center" gap={3}>
           <Flex
             w={10}
             h={10}
             rounded="xl"
-            bg="#002045"
+            bg="#981509"
             align="center"
             justify="center"
             flexShrink={0}
@@ -143,17 +143,17 @@ export default function LocationMap() {
             <Box
               as="span"
               className="material-symbols-outlined"
-              color="#fdbb31"
+              color="#f3ead6"
               fontSize="sm"
             >
               location_on
             </Box>
           </Flex>
           <Box>
-            <Text fontWeight="bold" fontSize="sm" color="#002045">
+            <Text fontWeight="800" fontSize="sm" color="#332b1f">
               New Generation School · Фергана
             </Text>
-            <Text fontSize="xs" color="#64748B">
+            <Text fontSize="xs" color="#6b6154">
               ул. Мустакиллик, 228
             </Text>
           </Box>

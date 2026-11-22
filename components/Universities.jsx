@@ -13,7 +13,7 @@ import { universities } from "../data/universities";
 
 export default function Universities() {
   return (
-    <Box as="section" py={10} bg="#111827" color="white" position="relative">
+    <Box as="section" py={10} bg="#11100e" color="#f3ead6" position="relative" zIndex={10} position="relative">
       <Box maxW="7xl" mx="auto" px={{ base: 6, md: 12 }}>
         <Box textAlign="center" mb={16}>
           <HStack
@@ -30,7 +30,7 @@ export default function Universities() {
             <Box
               as="span"
               className="material-symbols-outlined"
-              color="#fdbb31"
+              color="#d4b88c"
               fontSize="sm"
             >
               school
@@ -111,30 +111,30 @@ export default function Universities() {
           {/* Тизер-карточка */}
           <Flex
             border="2px dashed"
-            borderColor="rgba(255,184,0,0.5)"
+            borderColor="rgba(152, 21, 9,0.5)"
             rounded="2xl"
             p={6}
             direction="column"
             align="center"
             justify="center"
             textAlign="center"
-            bg="rgba(255,184,0,0.05)"
+            bg="rgba(152, 21, 9,0.05)"
           >
             <Flex
               w={12}
               h={12}
               rounded="full"
-              bg="rgba(255,184,0,0.2)"
+              bg="rgba(152, 21, 9,0.2)"
               align="center"
               justify="center"
               mb={4}
-              color="#fdbb31"
+              color="#981509"
               fontWeight="bold"
               fontSize="xl"
             >
               ?
             </Flex>
-            <Text fontWeight="bold" fontSize="sm" mb={1} color="#fdbb31">
+            <Text fontWeight="bold" fontSize="sm" mb={1} color="#981509">
               Куда поступит ваш ребенок?
             </Text>
             <Text fontSize="xs" color="gray.400" fontStyle="italic">

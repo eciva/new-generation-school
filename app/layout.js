@@ -1,6 +1,7 @@
 import { Inter, Manrope } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import VisitTracker from "@/components/VisitTracker";
+import ArchitecturalBackdrop from "@/components/ArchitecturalBackdrop";
 import "./globals.css";
 
 const inter = Inter({
@@ -129,8 +130,9 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#EEF2F6]">
+      <body className="min-h-full flex flex-col bg-[#faf9f6] text-[#332b1f]">
         <ThemeProvider>
+          <ArchitecturalBackdrop />
           <VisitTracker />
           {children}
         </ThemeProvider>

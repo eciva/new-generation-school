@@ -27,19 +27,19 @@ const ComponentMap = {
   location: LocationMap,
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 async function getHomePageData() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.new-generation-school.uz/api';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.new-generation-school.uz/api";
   try {
-    const res = await fetch(`${API_URL}/site/home`, { 
-      cache: 'no-store'
+    const res = await fetch(`${API_URL}/site/home`, {
+      next: { revalidate: 60 },
     });
     if (!res.ok) return null;
     const data = await res.json();
     return data;
   } catch (err) {
-    console.error('Failed to fetch home page', err);
+    console.error("Failed to fetch home page", err);
     return null;
   }
 }
@@ -54,51 +54,61 @@ export default async function Home() {
         <IntroVideo />
         <Navbar />
         <Hero />
-        <AnimateInView><Features /></AnimateInView>
-        <AnimateInView><Programs /></AnimateInView>
-        <AnimateInView><TechResults /></AnimateInView>
-        {/* <AnimateInView><AiSection /></AnimateInView> -- В разработке */}
-        {/* <AnimateInView><Teachers /></AnimateInView> -- Временно скрыто */}
-        <AnimateInView><Alumni /></AnimateInView>
-        <AnimateInView><Testimonials /></AnimateInView>
-        <AnimateInView><News /></AnimateInView>
-        <AnimateInView><LocationMap /></AnimateInView>
+        <main style={{ position: "relative", zIndex: 1 }}>
+          <AnimateInView><Features /></AnimateInView>
+          <AnimateInView><Programs /></AnimateInView>
+          <AnimateInView><TechResults /></AnimateInView>
+          {/* <AnimateInView><AiSection /></AnimateInView> -- В разработке */}
+          {/* <AnimateInView><Teachers /></AnimateInView> -- Временно скрыто */}
+          <AnimateInView><Alumni /></AnimateInView>
+          <AnimateInView><Testimonials /></AnimateInView>
+          <AnimateInView><News /></AnimateInView>
+          <AnimateInView><LocationMap /></AnimateInView>
+        </main>
         <Footer />
       </>
     );
   }
 
   const sections = pageData.data.sections
-    .filter(s => s.visible && s.type !== 'ai' && s.type !== 'teachers')
+    .filter((s) => s.visible && s.type !== "ai" && s.type !== "teachers")
     .sort((a, b) => a.order - b.order);
+
+  const heroSections = sections.filter((s) => s.type === "hero");
+  const bodySections = sections.filter((s) => s.type !== "hero");
+
+  const renderSection = (section, isHero = false) => {
+    const Component = ComponentMap[section.type];
+    if (!Component) return null;
+
+    let parsedData = {};
+    try {
+      if (section.data) {
+        parsedData = typeof section.data === "string" ? JSON.parse(section.data) : section.data;
+      }
+    } catch (e) {
+      console.error(`Failed to parse data for section ${section.id}`, e);
+    }
+
+    if (isHero) {
+      return <Component key={section.id} {...parsedData} />;
+    }
+
+    return (
+      <AnimateInView key={section.id} delay={0.1}>
+        <Component {...parsedData} />
+      </AnimateInView>
+    );
+  };
 
   return (
     <>
       <IntroVideo />
       <Navbar />
-      {sections.map((section, idx) => {
-        const Component = ComponentMap[section.type];
-        if (!Component) return null;
-        
-        let parsedData = {};
-        try {
-          if (section.data) {
-            parsedData = typeof section.data === 'string' ? JSON.parse(section.data) : section.data;
-          }
-        } catch (e) {
-          console.error(`Failed to parse data for section ${section.id}`, e);
-        }
-
-        if (section.type === 'hero') {
-          return <Component key={section.id} {...parsedData} />;
-        }
-
-        return (
-          <AnimateInView key={section.id} delay={0.1}>
-            <Component {...parsedData} />
-          </AnimateInView>
-        );
-      })}
+      {heroSections.map((section) => renderSection(section, true))}
+      <main style={{ position: "relative", zIndex: 1 }}>
+        {bodySections.map((section) => renderSection(section, false))}
+      </main>
       <Footer />
     </>
   );

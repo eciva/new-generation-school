@@ -17,7 +17,7 @@ export default function Values() {
         <Text
           as="span"
           display="block"
-          color="#fdbb31"
+          color="#981509"
           fontWeight="bold"
           letterSpacing="wider"
           textTransform="uppercase"
@@ -37,7 +37,7 @@ export default function Values() {
           lineHeight="1.1"
         >
           Создаем среду, где хочется <br />
-          <Box as="span" color="#64748B">
+          <Box as="span" color="#6b6154">
             учиться и развиваться
           </Box>
         </Heading>
@@ -77,12 +77,12 @@ export default function Values() {
               fontFamily="heading"
               fontSize="2xl"
               fontWeight="bold"
-              color="#002045"
+              color="#332b1f"
               mb={3}
             >
               {v.title}
             </Heading>
-            <Text color="#64748B" flexGrow={1}>
+            <Text color="#6b6154" flexGrow={1}>
               {v.text}
             </Text>
           </Flex>

@@ -67,7 +67,7 @@ export default function Admission({
 
   return (
     <Box as="section" py={16} px={{ base: 6, md: 12 }} maxW="7xl" mx="auto">
-      <Box bg="#ffb800" rounded="3xl" p={{ base: 8, md: 16 }} position="relative" overflow="hidden">
+      <Box bg="#981509" rounded="3xl" p={{ base: 8, md: 16 }} position="relative" overflow="hidden">
         {/* Background Pattern */}
         <Box 
           position="absolute" 
@@ -78,13 +78,13 @@ export default function Admission({
         
         <Flex direction={{ base: "column", lg: "row" }} justify="space-between" align="center" position="relative" zIndex={10} gap={10}>
           <VStack align="flex-start" spacing={4} maxW="2xl">
-            <Text as="span" display="block" color="#002045" fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wider">
+            <Text as="span" display="block" color="#332b1f" fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wider">
               {subtitle}
             </Text>
-            <Heading as="h2" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="800" color="#002045" lineHeight="1.2">
+            <Heading as="h2" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="800" color="#332b1f" lineHeight="1.2">
               {title}
             </Heading>
-            <Text color="rgba(0, 32, 69, 0.8)" fontSize="lg" maxW="md">
+            <Text color="rgba(51, 43, 31, 0.8)" fontSize="lg" maxW="md">
               {description}
             </Text>
           </VStack>
@@ -106,7 +106,7 @@ export default function Admission({
                 >
                   ✓
                 </Box>
-                <Heading as="h4" size="md" color="#002045">
+                <Heading as="h4" size="md" color="#332b1f">
                   Заявка принята!
                 </Heading>
                 <Text fontSize="sm" color="gray.600">
@@ -135,7 +135,7 @@ export default function Admission({
                   borderColor="gray.200"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  _focus={{ borderColor: "#002045", bg: "white" }}
+                  _focus={{ borderColor: "#332b1f", bg: "white" }}
                 />
                 <Input
                   placeholder="Номер телефона"
@@ -145,17 +145,17 @@ export default function Admission({
                   borderColor="gray.200"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  _focus={{ borderColor: "#002045", bg: "white" }}
+                  _focus={{ borderColor: "#332b1f", bg: "white" }}
                 />
                 <Button
                   type="submit"
                   w="full"
                   size="lg"
-                  bg="#002045"
+                  bg="#11100e"
                   color="white"
                   isLoading={loading}
                   loadingText="Отправка..."
-                  _hover={{ bg: "#001530" }}
+                  _hover={{ bg: "#191714" }}
                 >
                   {buttonText}
                 </Button>

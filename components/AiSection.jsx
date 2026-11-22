@@ -91,14 +91,14 @@ export default function AiSection({
       {/* Main Container Card with futuristic navy glow */}
       <Box
         position="relative"
-        bg="linear-gradient(145deg, #001833 0%, #002045 60%, #001226 100%)"
+        bg="linear-gradient(145deg, #11100e 0%, #332b1f 60%, #001226 100%)"
         rounded="3xl"
         p={{ base: 6, sm: 8, md: 12, lg: 14 }}
         color="white"
         overflow="hidden"
-        boxShadow="0 25px 60px -15px rgba(0, 32, 69, 0.45)"
+        boxShadow="0 25px 60px -15px rgba(51, 43, 31, 0.45)"
         border="1px solid"
-        borderColor="rgba(255, 184, 0, 0.25)"
+        borderColor="rgba(152, 21, 9, 0.25)"
       >
         {/* Background glow orbs */}
         <Box
@@ -107,7 +107,7 @@ export default function AiSection({
           right="-5%"
           w="500px"
           h="500px"
-          bg="radial-gradient(circle, rgba(255, 184, 0, 0.15) 0%, transparent 70%)"
+          bg="radial-gradient(circle, rgba(152, 21, 9, 0.15) 0%, transparent 70%)"
           pointerEvents="none"
         />
         <Box
@@ -129,22 +129,22 @@ export default function AiSection({
             px={4}
             py={1.5}
             rounded="full"
-            bg="rgba(255, 184, 0, 0.12)"
-            border="1px solid rgba(255, 184, 0, 0.3)"
+            bg="rgba(152, 21, 9, 0.12)"
+            border="1px solid rgba(152, 21, 9, 0.3)"
             mb={4}
           >
             <Box
               w={2}
               h={2}
               rounded="full"
-              bg="#FFB800"
-              boxShadow="0 0 10px #FFB800"
+              bg="#981509"
+              boxShadow="0 0 10px #981509"
             />
             <Text
               fontSize="xs"
               fontWeight="bold"
               letterSpacing="wider"
-              color="#FFB800"
+              color="#981509"
               textTransform="uppercase"
             >
               {badge}
@@ -230,8 +230,8 @@ export default function AiSection({
                     ● 18ms Latency
                   </Badge>
                   <Badge
-                    bg="rgba(255, 184, 0, 0.15)"
-                    color="#FFB800"
+                    bg="rgba(152, 21, 9, 0.15)"
+                    color="#981509"
                     fontSize="10px"
                     px={2}
                     py={0.5}
@@ -248,7 +248,7 @@ export default function AiSection({
                   fontSize="xs"
                   textTransform="uppercase"
                   letterSpacing="wider"
-                  color="#FFB800"
+                  color="#981509"
                   fontWeight="bold"
                   mb={2.5}
                 >
@@ -272,10 +272,10 @@ export default function AiSection({
                         gap={1.5}
                         cursor="pointer"
                         transition="all 0.2s"
-                        bg={isSelected ? "#FFB800" : "rgba(255, 255, 255, 0.08)"}
-                        color={isSelected ? "#002045" : "white"}
+                        bg={isSelected ? "#981509" : "rgba(255, 255, 255, 0.08)"}
+                        color={isSelected ? "#981509" : "white"}
                         border="1px solid"
-                        borderColor={isSelected ? "#FFB800" : "rgba(255, 255, 255, 0.15)"}
+                        borderColor={isSelected ? "#981509" : "rgba(255, 255, 255, 0.15)"}
                         _hover={{
                           bg: isSelected ? "#e6a600" : "rgba(255, 255, 255, 0.15)",
                           transform: "translateY(-1px)",
@@ -320,8 +320,8 @@ export default function AiSection({
 
                 {/* AI Response Card */}
                 <Box
-                  bg="linear-gradient(135deg, rgba(0, 32, 69, 0.8) 0%, rgba(0, 48, 100, 0.6) 100%)"
-                  border="1px solid rgba(255, 184, 0, 0.3)"
+                  bg="linear-gradient(135deg, rgba(51, 43, 31, 0.8) 0%, rgba(0, 48, 100, 0.6) 100%)"
+                  border="1px solid rgba(152, 21, 9, 0.3)"
                   rounded="xl"
                   p={4}
                   boxShadow="0 4px 20px rgba(0, 0, 0, 0.25)"
@@ -332,7 +332,7 @@ export default function AiSection({
                         w={5}
                         h={5}
                         rounded="full"
-                        bg="#FFB800"
+                        bg="#981509"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
@@ -341,16 +341,16 @@ export default function AiSection({
                           as="span"
                           className="material-symbols-outlined"
                           fontSize="13px"
-                          color="#002045"
+                          color="#332b1f"
                         >
                           smart_toy
                         </Box>
                       </Box>
-                      <Text fontSize="xs" fontWeight="bold" color="#FFB800">
+                      <Text fontSize="xs" fontWeight="bold" color="#981509">
                         EmpasisAI Response
                       </Text>
                     </Flex>
-                    <Badge bg="#FFB800" color="#002045" fontSize="11px" fontWeight="bold" px={2} py={0.5} rounded="md">
+                    <Badge bg="#981509" color="#ffffff" fontSize="11px" fontWeight="bold" px={2} py={0.5} rounded="md">
                       {currentDemo.response.score}
                     </Badge>
                   </Flex>
@@ -358,7 +358,7 @@ export default function AiSection({
                   <VStack align="stretch" spacing={2} mb={3}>
                     {currentDemo.response.analysis.map((line, idx) => (
                       <Flex key={idx} align="flex-start" gap={2}>
-                        <Box as="span" className="material-symbols-outlined" fontSize="16px" color="#FFB800" flexShrink={0} mt={0.5}>
+                        <Box as="span" className="material-symbols-outlined" fontSize="16px" color="#981509" flexShrink={0} mt={0.5}>
                           check_circle
                         </Box>
                         <Text fontSize="xs" color="gray.200" lineHeight="1.5">
@@ -371,8 +371,8 @@ export default function AiSection({
                   <Box
                     p={2.5}
                     rounded="lg"
-                    bg="rgba(255, 184, 0, 0.1)"
-                    border="1px dashed rgba(255, 184, 0, 0.35)"
+                    bg="rgba(152, 21, 9, 0.1)"
+                    border="1px dashed rgba(152, 21, 9, 0.35)"
                   >
                     <Text fontSize="xs" color="#FFD54F" fontWeight="medium">
                       💡 {currentDemo.response.recommendation}
@@ -397,7 +397,7 @@ export default function AiSection({
                 transition="all 0.3s"
                 _hover={{
                   bg: "rgba(255, 255, 255, 0.08)",
-                  borderColor: "rgba(255, 184, 0, 0.4)",
+                  borderColor: "rgba(152, 21, 9, 0.4)",
                   transform: "translateY(-2px)",
                 }}
               >
@@ -406,11 +406,11 @@ export default function AiSection({
                     w={11}
                     h={11}
                     rounded="xl"
-                    bg="rgba(255, 184, 0, 0.15)"
-                    border="1px solid rgba(255, 184, 0, 0.3)"
+                    bg="rgba(152, 21, 9, 0.15)"
+                    border="1px solid rgba(152, 21, 9, 0.3)"
                     align="center"
                     justify="center"
-                    color="#FFB800"
+                    color="#981509"
                     flexShrink={0}
                   >
                     <Box as="span" className="material-symbols-outlined" fontSize="22px">
@@ -421,7 +421,7 @@ export default function AiSection({
                     <Heading as="h3" fontSize="md" fontWeight="bold" color="white">
                       Подготовка к IELTS 8.5+
                     </Heading>
-                    <Text fontSize="11px" color="#FFB800" fontWeight="semibold">
+                    <Text fontSize="11px" color="#981509" fontWeight="semibold">
                       Speaking Simulator & Essay Examiner
                     </Text>
                   </Box>
@@ -536,7 +536,7 @@ export default function AiSection({
           zIndex={2}
         >
           <Flex align="center" gap={3}>
-            <Box as="span" className="material-symbols-outlined" color="#FFB800" fontSize="20px">
+            <Box as="span" className="material-symbols-outlined" color="#981509" fontSize="20px">
               security
             </Box>
             <Box>

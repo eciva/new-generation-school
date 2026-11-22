@@ -70,11 +70,11 @@ export default function Programs({
           <Text
             as="span"
             display="block"
-            color="#ffb800"
-            fontWeight="bold"
+            color="#981509"
+            fontWeight="700"
             textTransform="uppercase"
-            fontSize="sm"
-            letterSpacing="wider"
+            fontSize="xs"
+            letterSpacing="0.14em"
             mb={2}
           >
             {subtitle}
@@ -82,8 +82,9 @@ export default function Programs({
           <Heading
             as="h2"
             fontSize={{ base: "3xl", md: "4xl" }}
-            fontWeight="bold"
-            color="#002045"
+            fontWeight="800"
+            color="#332b1f"
+            letterSpacing="-0.02em"
           >
             {title}
           </Heading>
@@ -91,15 +92,22 @@ export default function Programs({
         <Link href="/programs">
           <Flex
             align="center"
-            color="#002045"
-            fontWeight="medium"
-            _hover={{ color: "blue.600" }}
+            px={5}
+            py={2.5}
+            rounded="full"
+            bg="rgba(255, 255, 255, 0.88)"
+            border="1px solid #e7e0d2"
+            color="#332b1f"
+            fontWeight="700"
+            fontSize="sm"
+            transition="all 0.2s"
+            _hover={{ bg: "#f3ead6", borderColor: "#981509", color: "#981509" }}
           >
             Все программы
             <Box
               as="span"
               className="material-symbols-outlined"
-              ml={1}
+              ml={1.5}
               fontSize="sm"
             >
               arrow_forward
@@ -117,38 +125,43 @@ export default function Programs({
         gap={6}
       >
         {items.map((item, idx) => {
-          const title = (item?.title || "").toLowerCase();
+          const itemTitle = (item?.title || "").toLowerCase();
           let finalImageUrl = "/images/programs/preschool.jpg";
-          if (title.includes("дошкол") || idx === 0) {
+          if (itemTitle.includes("дошкол") || idx === 0) {
             finalImageUrl = "/images/programs/preschool.jpg";
-          } else if (title.includes("начальн") || idx === 1) {
+          } else if (itemTitle.includes("начальн") || idx === 1) {
             finalImageUrl = "/images/programs/primary.jpg";
-          } else if (title.includes("средн") || idx === 2) {
+          } else if (itemTitle.includes("средн") || idx === 2) {
             finalImageUrl = "/images/programs/middle.jpg";
-          } else if (title.includes("старш") || idx === 3) {
+          } else if (itemTitle.includes("старш") || idx === 3) {
             finalImageUrl = "/images/programs/high.jpg";
           }
 
           return (
             <GridItem key={idx}>
               <Box
-                bg="white"
+                bg="rgba(255, 255, 255, 0.90)"
+                backdropFilter="blur(12px)"
                 rounded="2xl"
                 overflow="hidden"
-                boxShadow="sm"
-                border="1px solid"
-                borderColor="gray.100"
+                boxShadow="0 8px 24px -8px rgba(51, 43, 31, 0.08)"
+                border="1px solid #e7e0d2"
                 h="full"
-                transition="all 0.3s"
-                _hover={{ boxShadow: "md", transform: "translateY(-4px)" }}
+                transition="all 0.3s ease"
+                _hover={{
+                  boxShadow: "0 18px 36px -10px rgba(51, 43, 31, 0.14)",
+                  transform: "translateY(-4px)",
+                  borderColor: "#981509",
+                }}
                 display="flex"
                 flexDirection="column"
               >
-                <Box position="relative" h="200px" w="full">
+                <Box position="relative" h="200px" w="full" bg="#f3ead6">
                   <Box
                     as="img"
                     src={finalImageUrl}
                     alt={item.title}
+                    loading="lazy"
                     w="full"
                     h="full"
                     objectFit="cover"
@@ -157,40 +170,42 @@ export default function Programs({
                     position="absolute"
                     top={0}
                     left={4}
-                    bg={
-                      idx === 0
-                        ? "orange.400"
-                        : idx === 1
-                          ? "red.400"
-                          : idx === 2
-                            ? "purple.400"
-                            : "blue.600"
-                    }
-                    color="white"
+                    bg={idx % 2 === 0 ? "#981509" : "#11100e"}
+                    color="#f3ead6"
                     px={3}
                     py={1}
                     borderBottomRadius="md"
-                    fontWeight="bold"
-                    fontSize="sm"
+                    fontWeight="800"
+                    fontSize="xs"
+                    letterSpacing="0.08em"
                   >
                     {item.tag || `0${idx + 1}`}
                   </Box>
                 </Box>
-                <VStack align="flex-start" p={6} spacing={4} flex={1}>
-                  <Flex justify="space-between" w="full" align="center">
+                <VStack align="flex-start" p={6} spacing={3} flex={1}>
+                  <Flex justify="space-between" w="full" align="center" gap={2}>
                     <Heading
                       as="h3"
-                      fontSize="xl"
-                      fontWeight="bold"
-                      color="#002045"
+                      fontSize="lg"
+                      fontWeight="800"
+                      color="#332b1f"
                     >
                       {item.title}
                     </Heading>
-                    <Text fontSize="sm" color="gray.400" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="#981509"
+                      bg="#fbf1f0"
+                      px={2.5}
+                      py={0.5}
+                      rounded="full"
+                      fontWeight="700"
+                      whiteSpace="nowrap"
+                    >
                       {item.age}
                     </Text>
                   </Flex>
-                  <Text color="#64748B" fontSize="sm" flex={1}>
+                  <Text color="#6b6154" fontSize="sm" lineHeight="relaxed" flex={1}>
                     {item.text}
                   </Text>
                 </VStack>

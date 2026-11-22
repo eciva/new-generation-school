@@ -15,8 +15,6 @@ export default function IntroVideo() {
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch((err) => {
-          // If browser policy blocks unmuted autoplay without prior interaction,
-          // play video smoothly and unmute on first user click/touch
           console.warn("Unmuted autoplay restricted by browser policy; unmuting on first interaction:", err);
           video.muted = true;
           video.play().catch(() => {});
@@ -52,7 +50,7 @@ export default function IntroVideo() {
       position="fixed"
       inset={0}
       zIndex={999999}
-      bg="#000000"
+      bg="#11100e"
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -63,18 +61,20 @@ export default function IntroVideo() {
       <video
         ref={videoRef}
         src="/title.mp4"
+        preload="metadata"
         autoPlay
         playsInline
         onEnded={handleFinish}
+        onError={handleFinish}
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          backgroundColor: "#000000",
+          backgroundColor: "#11100e",
         }}
       />
 
-      {/* Top Bar with Skip Button Only - No Logo */}
+      {/* Top Bar with Skip Button */}
       <Flex
         position="absolute"
         top={0}
@@ -89,10 +89,10 @@ export default function IntroVideo() {
         <Button
           onClick={handleFinish}
           size={{ base: "sm", md: "md" }}
-          bg="rgba(0, 0, 0, 0.45)"
+          bg="rgba(17, 16, 14, 0.68)"
           backdropFilter="blur(16px)"
-          color="white"
-          border="1px solid rgba(255, 255, 255, 0.3)"
+          color="#f3ead6"
+          border="1px solid rgba(243, 234, 214, 0.28)"
           rounded="full"
           px={{ base: 4, sm: 6 }}
           py={2.5}
@@ -101,11 +101,11 @@ export default function IntroVideo() {
           cursor="pointer"
           transition="all 0.25s ease"
           _hover={{
-            bg: "#FFB800",
-            color: "#002045",
-            borderColor: "#FFB800",
+            bg: "#981509",
+            color: "#ffffff",
+            borderColor: "#b82316",
             transform: "translateX(2px)",
-            boxShadow: "0 4px 15px rgba(255, 184, 0, 0.4)",
+            boxShadow: "0 8px 22px rgba(152, 21, 9, 0.45)",
           }}
           display="inline-flex"
           alignItems="center"

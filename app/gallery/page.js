@@ -98,29 +98,29 @@ export default function GalleryPage() {
     <>
       <Navbar />
 
-      <Box bg="#001833" color="white" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
+      <Box bg="#11100e" color="#f3ead6" position="relative" zIndex={10} borderBottom="2px solid #981509" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
         <Box maxW="7xl" mx="auto">
           {/* Breadcrumb */}
           <Flex align="center" gap={2} mb={4}>
             <Link href="/">
-              <Text fontSize="xs" color="#94A3B8" _hover={{ color: "#FFB800" }}>Главная</Text>
+              <Text fontSize="xs" color="#a89f91" _hover={{ color: "#d4b88c" }}>Главная</Text>
             </Link>
-            <Text fontSize="xs" color="#64748B">/</Text>
-            <Text fontSize="xs" color="#FFB800" fontWeight="bold">Жизнь и галерея школы</Text>
+            <Text fontSize="xs" color="#766d61">/</Text>
+            <Text fontSize="xs" color="#d4b88c" fontWeight="bold">Жизнь и галерея школы</Text>
           </Flex>
 
           <Heading as="h1" fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }} fontWeight="900" mb={4} lineHeight="1.15">
             Современная среда New Generation School
           </Heading>
 
-          <Text color="#94A3B8" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed">
+          <Text color="#a89f91" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed">
             Погрузитесь в атмосферу нашей школы: умные аудитории, передовые лаборатории робототехники, спортивный комплекс и пространства для развития талантов каждого ученика.
           </Text>
         </Box>
       </Box>
 
       {/* Main Gallery Area */}
-      <Box py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
+      <Box position="relative" zIndex={1} py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
         {/* Category Filter Tabs */}
         <Flex gap={2} overflowX="auto" pb={4} mb={10}>
           {CATEGORIES.map((cat) => (
@@ -128,10 +128,10 @@ export default function GalleryPage() {
               key={cat.id}
               size="sm"
               variant={selectedCategory === cat.id ? "solid" : "outline"}
-              bg={selectedCategory === cat.id ? "#002045" : "transparent"}
-              color={selectedCategory === cat.id ? "white" : "#002045"}
-              borderColor="rgba(0, 32, 69, 0.2)"
-              _hover={{ bg: selectedCategory === cat.id ? "#002045" : "gray.100" }}
+              bg={selectedCategory === cat.id ? "#981509" : "transparent"}
+              color={selectedCategory === cat.id ? "white" : "#332b1f"}
+              borderColor="rgba(51, 43, 31, 0.2)"
+              _hover={{ bg: selectedCategory === cat.id ? "#981509" : "gray.100" }}
               onClick={() => setSelectedCategory(cat.id)}
               rounded="full"
               px={5}
@@ -144,7 +144,7 @@ export default function GalleryPage() {
 
         {isLoading ? (
           <Flex justify="center" align="center" minH="300px">
-            <Spinner size="xl" color="#FFB800" />
+            <Spinner size="xl" color="#981509" />
           </Flex>
         ) : filteredItems.length === 0 ? (
           <Box
@@ -154,7 +154,7 @@ export default function GalleryPage() {
             bg="rgba(255, 255, 255, 0.7)"
             backdropFilter="blur(20px)"
             rounded="3xl"
-            border="1px solid rgba(0, 32, 69, 0.08)"
+            border="1px solid rgba(51, 43, 31, 0.08)"
             maxW="2xl"
             mx="auto"
           >
@@ -164,19 +164,19 @@ export default function GalleryPage() {
               mx="auto"
               mb={4}
               rounded="2xl"
-              bg="rgba(0, 32, 69, 0.06)"
+              bg="rgba(51, 43, 31, 0.06)"
               align="center"
               justify="center"
-              color="#002045"
+              color="#332b1f"
             >
               <Box as="span" className="material-symbols-outlined" fontSize="32px">
                 photo_library
               </Box>
             </Flex>
-            <Heading as="h3" fontSize={{ base: "xl", md: "2xl" }} color="#002045" mb={2} fontWeight="bold">
+            <Heading as="h3" fontSize={{ base: "xl", md: "2xl" }} color="#332b1f" mb={2} fontWeight="bold">
               Галерея обновляется
             </Heading>
-            <Text color="#64748B" fontSize="sm" maxW="md" mx="auto" lineHeight="relaxed">
+            <Text color="#6b6154" fontSize="sm" maxW="md" mx="auto" lineHeight="relaxed">
               Мы готовим актуальные фото- и видеоматериалы школы. Скоро здесь появятся новые кадры!
             </Text>
           </Box>
@@ -205,16 +205,16 @@ export default function GalleryPage() {
                   position="relative"
                   rounded="3xl"
                   overflow="hidden"
-                  boxShadow="0 10px 25px -5px rgba(0, 32, 69, 0.08)"
-                  border="1px solid rgba(0, 32, 69, 0.08)"
+                  boxShadow="0 10px 25px -5px rgba(51, 43, 31, 0.08)"
+                  border="1px solid rgba(51, 43, 31, 0.08)"
                   cursor="pointer"
                   onClick={() => setLightboxItem(item)}
                   transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                   role="group"
                   _hover={{
                     transform: "translateY(-4px)",
-                    boxShadow: "0 25px 45px -10px rgba(0, 32, 69, 0.2)",
-                    borderColor: "rgba(255, 184, 0, 0.6)",
+                    boxShadow: "0 25px 45px -10px rgba(51, 43, 31, 0.2)",
+                    borderColor: "rgba(152, 21, 9, 0.6)",
                   }}
                 >
                   {/* Media (Video Autoplay or Image) */}
@@ -249,7 +249,7 @@ export default function GalleryPage() {
                   <Box
                     position="absolute"
                     inset={0}
-                    bg="linear-gradient(to top, rgba(0, 32, 69, 0.9) 0%, rgba(0, 32, 69, 0.2) 50%, transparent 100%)"
+                    bg="linear-gradient(to top, rgba(51, 43, 31, 0.9) 0%, rgba(51, 43, 31, 0.2) 50%, transparent 100%)"
                     transition="opacity 0.3s"
                     opacity={0.85}
                     _groupHover={{ opacity: 0.95 }}
@@ -261,7 +261,7 @@ export default function GalleryPage() {
                       px={3}
                       py={1}
                       rounded="full"
-                      bg={isVideo ? "rgba(239, 68, 68, 0.9)" : "rgba(0, 32, 69, 0.8)"}
+                      bg={isVideo ? "rgba(239, 68, 68, 0.9)" : "rgba(51, 43, 31, 0.8)"}
                       color="white"
                       backdropFilter="blur(8px)"
                       fontSize="2xs"
@@ -281,8 +281,8 @@ export default function GalleryPage() {
                         px={3}
                         py={1}
                         rounded="full"
-                        bg="#FFB800"
-                        color="#002045"
+                        bg="#981509"
+                        color="#ffffff"
                         fontWeight="bold"
                         fontSize="2xs"
                       >
@@ -293,14 +293,14 @@ export default function GalleryPage() {
 
                   {/* Bottom Text Content */}
                   <Box position="absolute" bottom={0} left={0} right={0} p={6} zIndex={2} color="white">
-                    <Text fontSize="2xs" fontWeight="bold" color="#FFB800" textTransform="uppercase" letterSpacing="wider" mb={1}>
+                    <Text fontSize="2xs" fontWeight="bold" color="#981509" textTransform="uppercase" letterSpacing="wider" mb={1}>
                       {CATEGORIES.find((c) => c.id === item.category)?.label || item.category}
                     </Text>
                     <Heading as="h3" fontSize={{ base: "md", md: item.featured ? "xl" : "lg" }} fontWeight="bold" mb={1.5} lineHeight="1.3">
                       {item.title}
                     </Heading>
                     {item.caption && (
-                      <Text fontSize="xs" color="#CBD5E1" lineHeight="relaxed" noOfLines={2}>
+                      <Text fontSize="xs" color="#d5cab6" lineHeight="relaxed" noOfLines={2}>
                         {item.caption}
                       </Text>
                     )}
@@ -316,30 +316,30 @@ export default function GalleryPage() {
           mt={20}
           p={{ base: 8, md: 14 }}
           rounded="3xl"
-          bg="#002045"
+          bg="#11100e"
           color="white"
           textAlign="center"
           position="relative"
           overflow="hidden"
-          boxShadow="0 25px 50px -12px rgba(0, 32, 69, 0.4)"
+          boxShadow="0 25px 50px -12px rgba(51, 43, 31, 0.4)"
         >
-          <Box position="absolute" top="-20%" right="-10%" w="300px" h="300px" bg="radial-gradient(circle, rgba(255, 184, 0, 0.15) 0%, transparent 70%)" pointerEvents="none" />
+          <Box position="absolute" top="-20%" right="-10%" w="300px" h="300px" bg="radial-gradient(circle, rgba(152, 21, 9, 0.15) 0%, transparent 70%)" pointerEvents="none" />
           <Heading size="lg" mb={3} fontWeight="bold">
             Хотите увидеть школу своими глазами?
           </Heading>
-          <Text color="#94A3B8" maxW="2xl" mx="auto" mb={8} fontSize="sm">
+          <Text color="#a89f91" maxW="2xl" mx="auto" mb={8} fontSize="sm">
             Мы проводим индивидуальные экскурсии для родителей и детей: вы сможете зайти в учебные лаборатории, познакомиться с преподавателями и оценить атмосферу школы.
           </Text>
           <Link href="/apply">
             <Button
               size="lg"
-              bg="#FFB800"
-              color="#002045"
+              bg="#981509"
+              color="#ffffff"
               fontWeight="bold"
               px={10}
               rounded="full"
-              _hover={{ bg: "#FFC72C", transform: "translateY(-2px)" }}
-              boxShadow="0 10px 25px rgba(255, 184, 0, 0.4)"
+              _hover={{ bg: "#981509", transform: "translateY(-2px)" }}
+              boxShadow="0 10px 25px rgba(152, 21, 9, 0.4)"
             >
               Записаться на индивидуальный тур
             </Button>
@@ -362,11 +362,10 @@ export default function GalleryPage() {
           onClick={() => setLightboxItem(null)}
         >
           <Box
-            bg="#001833"
-            color="white"
+            bg="#11100e" color="#f3ead6" position="relative" zIndex={10} borderBottom="2px solid #981509"
             rounded="3xl"
             overflow="hidden"
-            border="1px solid rgba(255, 184, 0, 0.3)"
+            border="1px solid rgba(152, 21, 9, 0.3)"
             maxW="4xl"
             w="full"
             boxShadow="0 25px 50px -12px rgba(0, 0, 0, 0.5)"
@@ -409,14 +408,14 @@ export default function GalleryPage() {
               )}
             </Box>
             <Box p={6}>
-              <Text fontSize="xs" fontWeight="bold" color="#FFB800" textTransform="uppercase" mb={1}>
+              <Text fontSize="xs" fontWeight="bold" color="#981509" textTransform="uppercase" mb={1}>
                 {CATEGORIES.find((c) => c.id === lightboxItem.category)?.label || lightboxItem.category}
               </Text>
               <Heading size="md" mb={2} color="white">
                 {lightboxItem.title}
               </Heading>
               {lightboxItem.caption && (
-                <Text fontSize="sm" color="#94A3B8" lineHeight="relaxed">
+                <Text fontSize="sm" color="#a89f91" lineHeight="relaxed">
                   {lightboxItem.caption}
                 </Text>
               )}

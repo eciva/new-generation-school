@@ -98,15 +98,15 @@ export default function Teachers({
     <Box as="section" id="teachers" py={16} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
       <Flex justify="space-between" align="flex-end" mb={12} flexWrap="wrap" gap={4}>
         <Box maxW="2xl">
-          <Text as="span" display="block" color="#FFB800" fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wider" mb={2}>
+          <Text as="span" display="block" color="#981509" fontWeight="bold" textTransform="uppercase" fontSize="sm" letterSpacing="wider" mb={2}>
             {subtitle}
           </Text>
-          <Heading as="h2" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" color="#002045">
+          <Heading as="h2" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" color="#332b1f">
             {title}
           </Heading>
         </Box>
         <Link href={teamLink}>
-          <Flex align="center" color="#002045" fontWeight="bold" fontSize="sm" _hover={{ color: "#D4AF37" }}>
+          <Flex align="center" color="#332b1f" fontWeight="bold" fontSize="sm" _hover={{ color: "#981509" }}>
             Вся команда 
             <Box as="span" className="material-symbols-outlined" ml={1} fontSize="sm">arrow_forward</Box>
           </Flex>
@@ -128,18 +128,18 @@ export default function Teachers({
             <GridItem key={item.id || idx}>
               <Box 
                 bg="white" 
-                border="1px solid rgba(0, 32, 69, 0.08)" 
+                border="1px solid rgba(51, 43, 31, 0.08)" 
                 borderRadius="0" 
                 overflow="hidden" 
-                boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.04)"
+                boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.04)"
                 display="flex"
                 flexDirection="column"
                 h="full"
                 transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                 _hover={{
                   transform: "translateY(-4px)",
-                  boxShadow: "0 20px 35px -10px rgba(0, 32, 69, 0.1)",
-                  borderColor: "rgba(255, 184, 0, 0.35)",
+                  boxShadow: "0 20px 35px -10px rgba(51, 43, 31, 0.1)",
+                  borderColor: "rgba(152, 21, 9, 0.35)",
                 }}
               >
                 {/* Photo container */}
@@ -157,7 +157,7 @@ export default function Teachers({
                       left: 0,
                       right: 0,
                       height: "35%",
-                      background: "linear-gradient(to top, rgba(0, 32, 69, 0.5) 0%, transparent 100%)",
+                      background: "linear-gradient(to top, rgba(51, 43, 31, 0.5) 0%, transparent 100%)",
                       pointerEvents: "none",
                     }
                   }}
@@ -181,9 +181,9 @@ export default function Teachers({
                     position="absolute"
                     top={4}
                     left={4}
-                    bg="rgba(0, 32, 69, 0.85)"
+                    bg="rgba(51, 43, 31, 0.85)"
                     backdropFilter="blur(4px)"
-                    color="#FFB800"
+                    color="#981509"
                     px={3}
                     py={1}
                     fontSize="xs"
@@ -210,14 +210,14 @@ export default function Teachers({
                       as="h3"
                       fontSize="xl"
                       fontWeight="bold"
-                      color="#002045"
+                      color="#332b1f"
                       mb={1}
                     >
                       {item.name}
                     </Heading>
                     <Text
                       fontSize="xs"
-                      color="#64748B"
+                      color="#6b6154"
                       fontWeight="semibold"
                       mb={3}
                       letterSpacing="wide"

@@ -206,49 +206,49 @@ export default function UniversitiesPage() {
     <>
       <Navbar />
 
-      <Box bg="#001833" color="white" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
+      <Box bg="#11100e" color="#f3ead6" position="relative" zIndex={10} borderBottom="2px solid #981509" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
         <Box maxW="7xl" mx="auto">
           {/* Breadcrumb / Tag */}
           <Flex align="center" gap={2} mb={4}>
             <Link href="/">
-              <Text fontSize="xs" color="#94A3B8" _hover={{ color: "#FFB800" }}>Главная</Text>
+              <Text fontSize="xs" color="#a89f91" _hover={{ color: "#d4b88c" }}>Главная</Text>
             </Link>
-            <Text fontSize="xs" color="#64748B">/</Text>
-            <Text fontSize="xs" color="#FFB800" fontWeight="bold">Университеты выпускников</Text>
+            <Text fontSize="xs" color="#766d61">/</Text>
+            <Text fontSize="xs" color="#d4b88c" fontWeight="bold">Университеты выпускников</Text>
           </Flex>
 
           <Heading as="h1" fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }} fontWeight="900" mb={4} lineHeight="1.15">
             Куда поступают наши выпускники
           </Heading>
 
-          <Text color="#94A3B8" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed" mb={10}>
+          <Text color="#a89f91" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed" mb={10}>
             100% выпускников школы New Generation School становятся студентами престижных университетов США, Великобритании, Европы, Южной Кореи и флагманских вузов Узбекистана.
           </Text>
 
           {/* Key Metrics Banner */}
-          <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} p={6} rounded="2xl" bg="rgba(255,255,255,0.05)" border="1px solid rgba(255,184,0,0.25)">
+          <SimpleGrid columns={{ base: 2, md: 4 }} gap={4} p={6} rounded="2xl" bg="#191714" border="1px solid #2e2923">
             <Box>
-              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#FFB800">100%</Text>
-              <Text fontSize="xs" color="#94A3B8" mt={1}>Поступление в вузы первой волны</Text>
+              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#f3ead6">100%</Text>
+              <Text fontSize="xs" color="#a89f91" mt={1}>Поступление в вузы первой волны</Text>
             </Box>
             <Box>
-              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#FFB800">\$2.4M+</Text>
-              <Text fontSize="xs" color="#94A3B8" mt={1}>Выиграно грантов и стипендий</Text>
+              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#d4b88c">$2.4M+</Text>
+              <Text fontSize="xs" color="#a89f91" mt={1}>Выиграно грантов и стипендий</Text>
             </Box>
             <Box>
-              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#FFB800">72%</Text>
-              <Text fontSize="xs" color="#94A3B8" mt={1}>Обучаются на бюджетных грантах</Text>
+              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#f3ead6">72%</Text>
+              <Text fontSize="xs" color="#a89f91" mt={1}>Обучаются на бюджетных грантах</Text>
             </Box>
             <Box>
-              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#FFB800">146+</Text>
-              <Text fontSize="xs" color="#94A3B8" mt={1}>Выпускников успешно трудоустроены</Text>
+              <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="#d4b88c">146+</Text>
+              <Text fontSize="xs" color="#a89f91" mt={1}>Выпускников успешно трудоустроены</Text>
             </Box>
           </SimpleGrid>
         </Box>
       </Box>
 
       {/* Main Content & University Grid */}
-      <Box py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
+      <Box position="relative" zIndex={1} py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
         <Flex direction={{ base: "column", md: "row" }} justify="space-between" align={{ base: "stretch", md: "center" }} gap={4} mb={10}>
           {/* Region Tabs */}
           <Flex gap={2} overflowX="auto" pb={2}>
@@ -257,10 +257,10 @@ export default function UniversitiesPage() {
                 key={r.id}
                 size="sm"
                 variant={selectedRegion === r.id ? "solid" : "outline"}
-                bg={selectedRegion === r.id ? "#002045" : "transparent"}
-                color={selectedRegion === r.id ? "white" : "#002045"}
-                borderColor="rgba(0, 32, 69, 0.2)"
-                _hover={{ bg: selectedRegion === r.id ? "#002045" : "gray.100" }}
+                bg={selectedRegion === r.id ? "#981509" : "transparent"}
+                color={selectedRegion === r.id ? "white" : "#332b1f"}
+                borderColor="rgba(51, 43, 31, 0.2)"
+                _hover={{ bg: selectedRegion === r.id ? "#981509" : "gray.100" }}
                 onClick={() => setSelectedRegion(r.id)}
                 rounded="full"
                 px={4}
@@ -279,7 +279,7 @@ export default function UniversitiesPage() {
               rounded="full"
               fontSize="sm"
               borderColor="gray.300"
-              _focus={{ borderColor: "#FFB800", boxShadow: "0 0 0 1px #FFB800" }}
+              _focus={{ borderColor: "#981509", boxShadow: "0 0 0 1px #981509" }}
             />
           </Box>
         </Flex>
@@ -292,16 +292,16 @@ export default function UniversitiesPage() {
               bg="white"
               rounded="3xl"
               p={6}
-              border="1px solid rgba(0, 32, 69, 0.08)"
-              boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.05)"
+              border="1px solid rgba(51, 43, 31, 0.08)"
+              boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.05)"
               transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
               display="flex"
               flexDirection="column"
               justifyContent="space-between"
               _hover={{
                 transform: "translateY(-6px)",
-                boxShadow: "0 20px 35px -10px rgba(0, 32, 69, 0.12)",
-                borderColor: "rgba(255, 184, 0, 0.5)",
+                boxShadow: "0 20px 35px -10px rgba(51, 43, 31, 0.12)",
+                borderColor: "rgba(152, 21, 9, 0.5)",
               }}
             >
               <Box>
@@ -325,9 +325,9 @@ export default function UniversitiesPage() {
                     px={3}
                     py={1}
                     rounded="full"
-                    bg="rgba(255, 184, 0, 0.15)"
-                    color="#002045"
-                    border="1px solid rgba(255, 184, 0, 0.4)"
+                    bg="rgba(152, 21, 9, 0.15)"
+                    color="#332b1f"
+                    border="1px solid rgba(152, 21, 9, 0.4)"
                     fontSize="2xs"
                     fontWeight="bold"
                   >
@@ -335,22 +335,22 @@ export default function UniversitiesPage() {
                   </Badge>
                 </Flex>
 
-                <Heading as="h3" fontSize="xl" fontWeight="bold" color="#002045" mb={1} lineHeight="1.3">
+                <Heading as="h3" fontSize="xl" fontWeight="bold" color="#332b1f" mb={1} lineHeight="1.3">
                   {uni.name}
                 </Heading>
 
-                <Flex align="center" gap={1.5} color="#64748B" fontSize="xs" mb={4}>
+                <Flex align="center" gap={1.5} color="#6b6154" fontSize="xs" mb={4}>
                   <Box as="span" className="material-symbols-outlined" fontSize="16px">location_on</Box>
                   <Text>{uni.city}, {uni.country}</Text>
                 </Flex>
 
                 <Box mb={4} p={3.5} rounded="2xl" bg="gray.50" border="1px solid" borderColor="gray.100">
-                  <Text fontSize="2xs" fontWeight="bold" color="#94A3B8" textTransform="uppercase" mb={1}>
+                  <Text fontSize="2xs" fontWeight="bold" color="#a89f91" textTransform="uppercase" mb={1}>
                     Специальности наших студентов:
                   </Text>
                   <Flex wrap="wrap" gap={1.5}>
                     {uni.majors.map((m, mIdx) => (
-                      <Badge key={mIdx} px={2} py={0.5} rounded="md" bg="white" border="1px solid" borderColor="gray.200" fontSize="2xs" color="#002045">
+                      <Badge key={mIdx} px={2} py={0.5} rounded="md" bg="white" border="1px solid" borderColor="gray.200" fontSize="2xs" color="#332b1f">
                         {m}
                       </Badge>
                     ))}
@@ -360,7 +360,7 @@ export default function UniversitiesPage() {
 
               <Flex justify="space-between" align="center" pt={4} borderTop="1px solid" borderColor="gray.100">
                 <Box>
-                  <Text fontSize="2xs" color="#94A3B8" textTransform="uppercase" fontWeight="bold">Грант / Стипендия</Text>
+                  <Text fontSize="2xs" color="#a89f91" textTransform="uppercase" fontWeight="bold">Грант / Стипендия</Text>
                   <Text fontSize="xs" fontWeight="bold" color="#00833E">{uni.scholarship}</Text>
                 </Box>
                 <Badge colorScheme="blue" variant="subtle" rounded="full" px={2.5} py={0.5} fontSize="2xs">
@@ -383,29 +383,29 @@ export default function UniversitiesPage() {
           mt={16}
           p={{ base: 8, md: 12 }}
           rounded="3xl"
-          bg="#002045"
+          bg="#11100e"
           color="white"
           textAlign="center"
           position="relative"
           overflow="hidden"
-          boxShadow="0 25px 50px -12px rgba(0, 32, 69, 0.3)"
+          boxShadow="0 25px 50px -12px rgba(51, 43, 31, 0.3)"
         >
           <Heading size="lg" mb={3} fontWeight="bold">
             Хотите, чтобы ваш ребенок поступил в топовый вуз мира?
           </Heading>
-          <Text color="#94A3B8" maxW="2xl" mx="auto" mb={8} fontSize="sm">
+          <Text color="#a89f91" maxW="2xl" mx="auto" mb={8} fontSize="sm">
             Мы начинаем профориентацию, подготовку к олимпиадам и международным экзаменам с ранних классов. Запишитесь на консультацию и экскурсию по школе.
           </Text>
           <Link href="/apply">
             <Button
               size="lg"
-              bg="#FFB800"
-              color="#002045"
+              bg="#981509"
+              color="#ffffff"
               fontWeight="bold"
               px={10}
               rounded="full"
-              _hover={{ bg: "#FFC72C", transform: "translateY(-2px)" }}
-              boxShadow="0 10px 25px rgba(255, 184, 0, 0.4)"
+              _hover={{ bg: "#981509", transform: "translateY(-2px)" }}
+              boxShadow="0 10px 25px rgba(152, 21, 9, 0.4)"
             >
               Подать заявку на поступление
             </Button>

@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Badge,
   Flex,
   HStack,
   Text,
@@ -15,8 +16,8 @@ import { useState, useEffect } from "react";
 const navLinks = [
   { href: "/#about", label: "О нас" },
   { href: "/programs", label: "Программы" },
-  { href: "/#ai", label: "EmpasisAI", isAi: true, hidden: true }, // в разработке
-  { href: "/teachers", label: "Преподаватели", hidden: true },     // временно скрыто
+  { href: "/#ai", label: "EmpasisAI", isAi: true, hidden: true },
+  { href: "/teachers", label: "Преподаватели", hidden: true },
   { href: "/universities", label: "Университеты" },
   { href: "/gallery", label: "Галерея" },
   { href: "/news", label: "Новости" },
@@ -55,10 +56,10 @@ export default function Navbar() {
           maxW={{ base: "full", xl: "7xl", "2xl": "1440px" }}
           mx="auto"
           px={{ base: 4, md: 6, "2xl": 8 }}
-          py={3}
+          py={2.5}
           align="center"
           justify="space-between"
-          boxShadow="glass"
+          boxShadow="0 10px 30px -8px rgba(51, 43, 31, 0.1)"
         >
           {/* Brand */}
           <ChakraLink
@@ -84,15 +85,15 @@ export default function Navbar() {
             />
             <Box
               display={{ base: "none", sm: "flex" }}
-              lineHeight={"1.2"}
+              lineHeight="1.2"
               flexDirection="column"
             >
               <Text
                 fontFamily="heading"
-                fontWeight="bold"
-                color="#002045"
+                fontWeight="800"
+                color="#332b1f"
                 lineHeight="tight"
-                letterSpacing="tight"
+                letterSpacing="-0.02em"
                 whiteSpace="nowrap"
               >
                 New Generation
@@ -100,9 +101,9 @@ export default function Navbar() {
               <Text
                 fontSize="10px"
                 textTransform="uppercase"
-                letterSpacing="widest"
-                color="#64748B"
-                fontWeight="medium"
+                letterSpacing="0.16em"
+                color="#981509"
+                fontWeight="700"
                 whiteSpace="nowrap"
               >
                 School
@@ -114,44 +115,39 @@ export default function Navbar() {
           <HStack
             display={{ base: "none", xl: "flex" }}
             gap={{ xl: 0.5, "2xl": 1.5 }}
-            bg="rgba(255,255,255,0.6)"
+            bg="rgba(243, 234, 214, 0.52)"
             rounded="full"
             p={1}
-            border="1px solid rgba(255,255,255,0.7)"
+            border="1px solid #e7e0d2"
             flexShrink={0}
           >
             {visibleNavLinks.map((link) => {
-              const isActive = link.href === pathname || (link.href.startsWith("/#") && pathname === "/" && false);
+              const isActive = link.href === pathname;
               return (
                 <ChakraLink
                   as={Link}
                   key={link.href}
                   href={link.href}
                   whiteSpace="nowrap"
-                  fontWeight={link.isAi ? "bold" : "medium"}
+                  fontWeight={isActive || link.isAi ? "700" : "600"}
                   fontSize={{ xl: "xs", "2xl": "sm" }}
-                  px={{ xl: 2, "2xl": 3 }}
+                  px={{ xl: 2.5, "2xl": 3.5 }}
                   py={1.5}
                   rounded="full"
-                  color="#002045"
-                  bg={isActive ? "white" : link.isAi ? "rgba(255, 184, 0, 0.2)" : "transparent"}
-                  border={link.isAi ? "1px solid rgba(255, 184, 0, 0.45)" : "none"}
-                  boxShadow={isActive ? "sm" : "none"}
+                  color={isActive ? "#981509" : "#332b1f"}
+                  bg={isActive ? "#ffffff" : "transparent"}
+                  border={isActive ? "1px solid #e7e0d2" : "1px solid transparent"}
+                  boxShadow={isActive ? "0 2px 8px rgba(51, 43, 31, 0.06)" : "none"}
                   transition="all 0.2s"
                   display="inline-flex"
                   alignItems="center"
                   gap={1}
                   _hover={{
-                    bg: link.isAi ? "rgba(255, 184, 0, 0.35)" : "rgba(255,255,255,0.9)",
-                    color: "#002045",
+                    bg: "#ffffff",
+                    color: "#981509",
                     textDecoration: "none",
                   }}
                 >
-                  {link.isAi && (
-                    <Box as="span" className="material-symbols-outlined" fontSize="13px" color="#D97706">
-                      auto_awesome
-                    </Box>
-                  )}
                   {link.label}
                 </ChakraLink>
               );
@@ -164,7 +160,7 @@ export default function Navbar() {
               <Box
                 as="span"
                 className="material-symbols-outlined"
-                color="#002045"
+                color="#981509"
                 fontSize="xl"
               >
                 call
@@ -173,12 +169,12 @@ export default function Navbar() {
                 <Text
                   as="a"
                   href="tel:+998913259565"
-                  fontWeight="bold"
+                  fontWeight="700"
                   fontSize="xs"
-                  color="#002045"
+                  color="#332b1f"
                   display="block"
                   lineHeight="1.2"
-                  _hover={{ color: "blue.600" }}
+                  _hover={{ color: "#981509" }}
                 >
                   +998 (91) 325-95-65
                 </Text>
@@ -186,11 +182,11 @@ export default function Navbar() {
                   as="a"
                   href="tel:+998930417140"
                   fontSize="11px"
-                  fontWeight="medium"
-                  color="#64748B"
+                  fontWeight="600"
+                  color="#6b6154"
                   display="block"
                   lineHeight="1.2"
-                  _hover={{ color: "blue.600" }}
+                  _hover={{ color: "#981509" }}
                 >
                   +998 (93) 041-71-40
                 </Text>
@@ -206,14 +202,14 @@ export default function Navbar() {
               flexShrink={0}
               px={{ base: 4, xl: 6 }}
               py={2.5}
-              bg="#FFB800"
-              color="#002045"
-              fontWeight="bold"
+              bg="#981509"
+              color="#ffffff"
+              fontWeight="700"
               fontSize="sm"
               rounded="full"
               transition="all 0.2s"
-              boxShadow="premium"
-              _hover={{ bg: "accentGoldHover", textDecoration: "none", transform: "translateY(-1px)" }}
+              boxShadow="0 8px 20px -6px rgba(152, 21, 9, 0.36)"
+              _hover={{ bg: "#7c1006", textDecoration: "none", transform: "translateY(-1px)" }}
             >
               Подать заявку
             </ChakraLink>
@@ -228,14 +224,14 @@ export default function Navbar() {
               flexShrink={0}
               w={10}
               h={10}
-              color="#002045"
-              bg="rgba(255,255,255,0.85)"
+              color="#332b1f"
+              bg="#ffffff"
               rounded="full"
-              border="1px solid rgba(255,255,255,0.6)"
+              border="1px solid #e7e0d2"
               cursor="pointer"
               transition="all 0.2s"
               _active={{ transform: "scale(0.94)" }}
-              _hover={{ bg: "white" }}
+              _hover={{ bg: "#f3ead6", borderColor: "#d5cab6" }}
             >
               <Box
                 as="span"
@@ -253,18 +249,17 @@ export default function Navbar() {
         {isOpen && (
           <Box
             display={{ base: "block", xl: "none" }}
-            bg="rgba(255, 255, 255, 0.98)"
-            backdropFilter="blur(16px)"
+            bg="rgba(250, 249, 246, 0.98)"
+            backdropFilter="blur(18px)"
             mt={2}
-            rounded="3xl"
+            rounded="2xl"
             p={5}
-            boxShadow="0 20px 40px -15px rgba(0, 32, 69, 0.25)"
-            border="1px solid"
-            borderColor="rgba(255, 255, 255, 0.8)"
+            boxShadow="0 22px 46px -14px rgba(51, 43, 31, 0.22)"
+            border="1px solid #e7e0d2"
             maxH="calc(100vh - 100px)"
             overflowY="auto"
           >
-            <VStack spacing={2} align="stretch">
+            <VStack spacing={1.5} align="stretch">
               {visibleNavLinks.map((link) => {
                 const isActive = link.href === pathname;
                 return (
@@ -273,10 +268,10 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={onClose}
-                    color={isActive ? "#002045" : "#1E293B"}
-                    bg={isActive ? "rgba(0, 32, 69, 0.06)" : link.isAi ? "rgba(255, 184, 0, 0.12)" : "transparent"}
-                    border={link.isAi ? "1px solid rgba(255, 184, 0, 0.3)" : "none"}
-                    fontWeight={isActive || link.isAi ? "bold" : "medium"}
+                    color={isActive ? "#981509" : "#332b1f"}
+                    bg={isActive ? "#fbf1f0" : "transparent"}
+                    border={isActive ? "1px solid rgba(152, 21, 9, 0.2)" : "1px solid transparent"}
+                    fontWeight={isActive ? "700" : "600"}
                     fontSize="md"
                     px={4}
                     py={3}
@@ -285,42 +280,37 @@ export default function Navbar() {
                     alignItems="center"
                     justifyContent="space-between"
                     transition="all 0.15s ease"
-                    _hover={{ bg: "rgba(0, 32, 69, 0.05)", textDecoration: "none" }}
+                    _hover={{ bg: "#f3ead6", textDecoration: "none" }}
                   >
                     <Flex align="center" gap={2}>
-                      {link.isAi && (
-                        <Box as="span" className="material-symbols-outlined" fontSize="18px" color="#FFB800">
-                          auto_awesome
-                        </Box>
-                      )}
                       <Text>{link.label}</Text>
                     </Flex>
                     {link.isAi && (
-                      <Badge bg="#FFB800" color="#002045" fontSize="10px" px={2} py={0.5} rounded="full" fontWeight="bold">
+                      <Badge bg="#981509" color="#ffffff" fontSize="10px" px={2} py={0.5} rounded="full" fontWeight="bold">
                         AI
                       </Badge>
                     )}
                     {isActive && !link.isAi && (
-                      <Box w={2} h={2} rounded="full" bg="#FFB800" />
+                      <Box w={2} h={2} rounded="full" bg="#981509" />
                     )}
                   </ChakraLink>
                 );
               })}
 
-              <Box pt={4} mt={2} borderTop="1px solid" borderColor="gray.100">
-                <Box mb={4} px={4} py={3} bg="gray.50" rounded="xl">
-                  <Flex alignItems="center" gap={3} mb={2}>
-                    <Box as="span" className="material-symbols-outlined" fontSize="18px" color="#FFB800">
+              <Box pt={4} mt={2} borderTop="1px solid #e7e0d2">
+                <Box mb={4} px={4} py={3} bg="#ffffff" border="1px solid #e7e0d2" rounded="xl">
+                  <Flex alignItems="center" gap={3} mb={2.5}>
+                    <Box as="span" className="material-symbols-outlined" fontSize="18px" color="#981509">
                       call
                     </Box>
                     <Box>
-                      <Text fontSize="11px" color="gray.500" fontWeight="medium">Основной номер:</Text>
+                      <Text fontSize="11px" color="#6b6154" fontWeight="600">Основной номер:</Text>
                       <Text
                         as="a"
                         href="tel:+998913259565"
                         fontSize="sm"
-                        fontWeight="bold"
-                        color="#002045"
+                        fontWeight="700"
+                        color="#332b1f"
                         display="block"
                       >
                         +998 (91) 325-95-65
@@ -328,17 +318,17 @@ export default function Navbar() {
                     </Box>
                   </Flex>
                   <Flex alignItems="center" gap={3}>
-                    <Box as="span" className="material-symbols-outlined" fontSize="18px" color="blue.500">
+                    <Box as="span" className="material-symbols-outlined" fontSize="18px" color="#6b6154">
                       phone_forwarded
                     </Box>
                     <Box>
-                      <Text fontSize="11px" color="gray.500" fontWeight="medium">Запасной номер:</Text>
+                      <Text fontSize="11px" color="#6b6154" fontWeight="600">Запасной номер:</Text>
                       <Text
                         as="a"
                         href="tel:+998930417140"
                         fontSize="sm"
-                        fontWeight="bold"
-                        color="#002045"
+                        fontWeight="700"
+                        color="#332b1f"
                         display="block"
                       >
                         +998 (93) 041-71-40
@@ -355,14 +345,14 @@ export default function Navbar() {
                   textAlign="center"
                   px={6}
                   py={3.5}
-                  bg="#FFB800"
-                  color="#002045"
-                  fontWeight="bold"
+                  bg="#981509"
+                  color="#ffffff"
+                  fontWeight="700"
                   fontSize="md"
                   rounded="full"
-                  boxShadow="0 4px 14px rgba(255, 184, 0, 0.4)"
+                  boxShadow="0 8px 20px -6px rgba(152, 21, 9, 0.4)"
                   transition="all 0.2s"
-                  _hover={{ textDecoration: "none", bg: "#e6a600", transform: "translateY(-1px)" }}
+                  _hover={{ textDecoration: "none", bg: "#7c1006", transform: "translateY(-1px)" }}
                   _active={{ transform: "scale(0.98)" }}
                 >
                   Подать заявку

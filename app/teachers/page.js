@@ -174,29 +174,29 @@ export default function TeachersPage() {
     <>
       <Navbar />
 
-      <Box bg="#001833" color="white" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
+      <Box bg="#11100e" color="#f3ead6" position="relative" zIndex={10} borderBottom="2px solid #981509" pt={{ base: 28, md: 36 }} pb={{ base: 16, md: 20 }} px={{ base: 4, sm: 6, md: 12 }}>
         <Box maxW="7xl" mx="auto">
           {/* Breadcrumb */}
           <Flex align="center" gap={2} mb={4}>
             <Link href="/">
-              <Text fontSize="xs" color="#94A3B8" _hover={{ color: "#FFB800" }}>Главная</Text>
+              <Text fontSize="xs" color="#a89f91" _hover={{ color: "#d4b88c" }}>Главная</Text>
             </Link>
-            <Text fontSize="xs" color="#64748B">/</Text>
-            <Text fontSize="xs" color="#FFB800" fontWeight="bold">Преподаватели</Text>
+            <Text fontSize="xs" color="#766d61">/</Text>
+            <Text fontSize="xs" color="#d4b88c" fontWeight="bold">Преподаватели</Text>
           </Flex>
 
           <Heading as="h1" fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }} fontWeight="900" mb={4} lineHeight="1.15">
             Педагогический состав школы
           </Heading>
 
-          <Text color="#94A3B8" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed">
+          <Text color="#a89f91" fontSize={{ base: "md", md: "xl" }} maxW="3xl" lineHeight="relaxed">
             Наша гордость — высококвалифицированные педагоги, кандидаты наук, авторы учебных программ и сертифицированные тренеры Cambridge Assessment, которые вдохновляют учеников на великие свершения.
           </Text>
         </Box>
       </Box>
 
       {/* Main Content */}
-      <Box py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
+      <Box position="relative" zIndex={1} py={{ base: 12, md: 16 }} px={{ base: 4, sm: 6, md: 12 }} maxW="7xl" mx="auto">
         {/* Department Filters */}
         <Flex gap={2} overflowX="auto" pb={4} mb={10}>
           {DEPARTMENTS.map((dept) => (
@@ -204,10 +204,10 @@ export default function TeachersPage() {
               key={dept.id}
               size="sm"
               variant={selectedDept === dept.id ? "solid" : "outline"}
-              bg={selectedDept === dept.id ? "#002045" : "transparent"}
-              color={selectedDept === dept.id ? "white" : "#002045"}
-              borderColor="rgba(0, 32, 69, 0.2)"
-              _hover={{ bg: selectedDept === dept.id ? "#002045" : "gray.100" }}
+              bg={selectedDept === dept.id ? "#981509" : "transparent"}
+              color={selectedDept === dept.id ? "white" : "#332b1f"}
+              borderColor="rgba(51, 43, 31, 0.2)"
+              _hover={{ bg: selectedDept === dept.id ? "#981509" : "gray.100" }}
               onClick={() => setSelectedDept(dept.id)}
               rounded="full"
               px={4}
@@ -228,10 +228,10 @@ export default function TeachersPage() {
               <Box
                 key={teacher.id || idx}
                 bg="white"
-                border="1px solid rgba(0, 32, 69, 0.08)"
+                border="1px solid rgba(51, 43, 31, 0.08)"
                 borderRadius="0"
                 overflow="hidden"
-                boxShadow="0 4px 20px -2px rgba(0, 32, 69, 0.04)"
+                boxShadow="0 4px 20px -2px rgba(51, 43, 31, 0.04)"
                 display="flex"
                 flexDirection="column"
                 h="full"
@@ -240,8 +240,8 @@ export default function TeachersPage() {
                 onClick={() => setSelectedTeacher(teacher)}
                 _hover={{
                   transform: "translateY(-6px)",
-                  boxShadow: "0 20px 35px -10px rgba(0, 32, 69, 0.12)",
-                  borderColor: "rgba(255, 184, 0, 0.4)",
+                  boxShadow: "0 20px 35px -10px rgba(51, 43, 31, 0.12)",
+                  borderColor: "rgba(152, 21, 9, 0.4)",
                 }}
               >
                 {/* Photo */}
@@ -262,8 +262,8 @@ export default function TeachersPage() {
                       position="absolute"
                       top={3}
                       left={3}
-                      bg="#FFB800"
-                      color="#002045"
+                      bg="#981509"
+                      color="#ffffff"
                       px={3}
                       py={1}
                       fontWeight="bold"
@@ -278,19 +278,19 @@ export default function TeachersPage() {
                 {/* Details */}
                 <Box p={5} display="flex" flexDirection="column" justifyContent="space-between" flex={1} bg="white">
                   <Box mb={3}>
-                    <Text fontSize="xs" fontWeight="bold" color="#FFB800" textTransform="uppercase" letterSpacing="wider" mb={1}>
+                    <Text fontSize="xs" fontWeight="bold" color="#981509" textTransform="uppercase" letterSpacing="wider" mb={1}>
                       {teacher.subject}
                     </Text>
-                    <Heading as="h4" fontSize={{ base: "md", md: "lg" }} fontWeight="bold" color="#002045" mb={1} lineHeight="1.3">
+                    <Heading as="h4" fontSize={{ base: "md", md: "lg" }} fontWeight="bold" color="#332b1f" mb={1} lineHeight="1.3">
                       {teacher.name}
                     </Heading>
                     {teacher.role && (
-                      <Text fontSize="xs" fontWeight="semibold" color="#64748B" mb={2}>
+                      <Text fontSize="xs" fontWeight="semibold" color="#6b6154" mb={2}>
                         {teacher.role}
                       </Text>
                     )}
                   </Box>
-                  <Text fontSize="xs" color="#94A3B8" lineHeight="1.5" noOfLines={3}>
+                  <Text fontSize="xs" color="#a89f91" lineHeight="1.5" noOfLines={3}>
                     {teacher.desc}
                   </Text>
                 </Box>
@@ -320,7 +320,7 @@ export default function TeachersPage() {
             overflow="hidden"
             maxW="lg"
             w="full"
-            boxShadow="0 25px 50px -12px rgba(0, 32, 69, 0.4)"
+            boxShadow="0 25px 50px -12px rgba(51, 43, 31, 0.4)"
             position="relative"
             onClick={(e) => e.stopPropagation()}
           >
@@ -349,10 +349,10 @@ export default function TeachersPage() {
               </Button>
             </Box>
             <Box p={6}>
-              <Text fontSize="xs" fontWeight="bold" color="#FFB800" textTransform="uppercase" mb={1}>
+              <Text fontSize="xs" fontWeight="bold" color="#981509" textTransform="uppercase" mb={1}>
                 {selectedTeacher.subject}
               </Text>
-              <Heading size="md" color="#002045" mb={1}>
+              <Heading size="md" color="#332b1f" mb={1}>
                 {selectedTeacher.name}
               </Heading>
               <Text fontSize="sm" fontWeight="semibold" color="gray.600" mb={4}>

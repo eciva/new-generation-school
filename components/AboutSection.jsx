@@ -31,7 +31,7 @@ export default function AboutSection() {
               <Text
                 as="span"
                 display="block"
-                color="#FFB800"
+                color="#981509"
                 fontWeight="bold"
                 letterSpacing="wider"
                 textTransform="uppercase"
@@ -51,7 +51,7 @@ export default function AboutSection() {
               >
                 Лучший выбор для будущего
               </Heading>
-              <Text color="#64748B" fontSize="lg" lineHeight="relaxed" mb={8}>
+              <Text color="#6b6154" fontSize="lg" lineHeight="relaxed" mb={8}>
                 Выбирая нашу школу, вы получаете опытных педагогов, которые
                 учитывают потребности каждого ученика. Мы используем передовые
                 методики и качественные материалы, обеспечивая превосходный
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 gap={4}
                 p={4}
                 rounded="2xl"
-                bg="#f8fafc"
+                bg="rgba(250, 249, 246, 0.72)"
                 borderColor="borderLight"
               >
                 <Box
@@ -85,7 +85,7 @@ export default function AboutSection() {
                   <Text fontWeight="bold" color="primaryNavy">
                     Профессионалы
                   </Text>
-                  <Text fontSize="sm" color="#64748B" mt={1}>
+                  <Text fontSize="sm" color="#6b6154" mt={1}>
                     Квалифицированный состав
                   </Text>
                 </Box>
@@ -95,7 +95,7 @@ export default function AboutSection() {
                 gap={4}
                 p={4}
                 rounded="2xl"
-                bg={"#f8fafc"}
+                bg="rgba(250, 249, 246, 0.72)"
                 borderColor="borderLight"
               >
                 <Box
@@ -112,7 +112,7 @@ export default function AboutSection() {
                   <Text fontWeight="bold" color="primaryNavy">
                     Питание
                   </Text>
-                  <Text fontSize="sm" color="#64748B" mt={1}>
+                  <Text fontSize="sm" color="#6b6154" mt={1}>
                     Здоровое 3-х разовое
                   </Text>
                 </Box>
@@ -134,7 +134,7 @@ export default function AboutSection() {
                 w={"100px"}
                 h={"100px"}
                 rounded="full"
-                bg={"#002045"}
+                bg="#11100e"
                 mb={6}
                 boxShadow="xl"
                 mx="auto"
@@ -142,7 +142,7 @@ export default function AboutSection() {
                 <Box
                   as="span"
                   className="material-symbols-outlined"
-                  color="#FFB800"
+                  color="#981509"
                   fontSize={"50px !important"}
                 >
                   verified
@@ -158,7 +158,7 @@ export default function AboutSection() {
               >
                 100%
               </Heading>
-              <Text fontSize="xl" color={"#64748b"} fontWeight="medium">
+              <Text fontSize="xl" color={"#6b6154"} fontWeight="medium">
                 Индивидуальный подход к каждому ученику, обеспечивающий
                 максимальное вовлечение и успех.
               </Text>
@@ -170,7 +170,7 @@ export default function AboutSection() {
               right="-12"
               w={64}
               h={64}
-              bg="rgba(255,184,0,0.1)"
+              bg="rgba(152, 21, 9,0.1)"
               rounded="full"
               filter="blur(64px)"
               transform="translateY(-50%)"

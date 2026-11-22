@@ -19,7 +19,7 @@ export default function Hero({
   description = "Современная школа полного цикла с сильным преподавательским составом, современной образовательной средой и индивидуальным подходом к развитию каждого ученика.",
   applyUrl = "#",
   videoUrl = "https://youtu.be/GVJVB3wjtHc?feature=shared",
-  imageUrl = "/hero-panda.png",
+  imageUrl = "/hero-panda.webp",
   stats = [
     { value: "15+", label: "лет успешной работы", icon: "workspace_premium" },
     { value: "40+", label: "квалифицированных преподавателей", icon: "school" },
@@ -29,11 +29,16 @@ export default function Hero({
 }) {
   const isVideo = imageUrl?.endsWith(".mp4") || imageUrl?.endsWith(".webm");
 
-  let finalImageUrl = "/hero-panda.png";
+  let finalImageUrl = "/hero-panda.webp";
 
   if (imageUrl) {
     if (isVideo) {
       finalImageUrl = imageUrl;
+    } else if (
+      imageUrl === "/hero-panda.png" ||
+      imageUrl === "/uploads/hero-panda.png"
+    ) {
+      finalImageUrl = "/hero-panda.webp";
     } else if (
       imageUrl.startsWith("http://") ||
       imageUrl.startsWith("https://")
@@ -42,8 +47,7 @@ export default function Hero({
     } else if (
       imageUrl.startsWith("/hero-") ||
       imageUrl.startsWith("/bg.") ||
-      imageUrl.startsWith("/images/") ||
-      imageUrl === "/uploads/hero-panda.png"
+      imageUrl.startsWith("/images/")
     ) {
       finalImageUrl = imageUrl;
     } else if (imageUrl.startsWith("/")) {
@@ -65,16 +69,19 @@ export default function Hero({
     <Box
       as="section"
       position="relative"
+      zIndex={10}
       minH="100vh"
       w="100%"
+      bg="#faf9f6"
+      borderBottom="1px solid #e7e0d2"
       overflow="hidden"
       display="flex"
       alignItems="center"
-      pt={{ base: "120px", md: "130px", lg: "140px", "2xl": "150px" }}
+      pt={{ base: "108px", md: "126px", lg: "136px", "2xl": "148px" }}
       pb={{ base: 12, md: 16 }}
     >
-      {/* Background Media */}
-      <Box position="absolute" inset={0} zIndex={0} bg="#EEF2F6">
+      {/* Desktop Full-Bleed Architectural Panda Backdrop */}
+      <Box position="absolute" inset={0} zIndex={0} bg="#faf9f6">
         {isVideo ? (
           <video
             src={finalImageUrl}
@@ -86,30 +93,52 @@ export default function Hero({
           />
         ) : (
           <Box
+            display={{ base: "none", lg: "block" }}
             position="absolute"
             inset={0}
             bgImage={`url('${finalImageUrl}')`}
             bgSize="cover"
-            bgPosition={{ base: "center", md: "center" }}
+            bgPosition="72% center"
+            style={{
+              filter: "saturate(0.92) contrast(1.03) sepia(0.05)",
+            }}
           />
         )}
-        {/* Soft atmospheric lighting overlay on canvas */}
+
+        {/* Warm Editorial Parchment-to-Clear Veil (Desktop) */}
         <Box
+          display={{ base: "none", lg: "block" }}
           position="absolute"
           inset={0}
-          bgGradient={{
-            base: "linear(to-b, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.9) 100%)",
-            lg: "linear(to-r, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 38%, rgba(255, 255, 255, 0.45) 60%, transparent 85%)",
+          style={{
+            background:
+              "linear-gradient(96deg, rgba(250, 249, 246, 0.98) 0%, rgba(250, 249, 246, 0.94) 37%, rgba(243, 234, 214, 0.62) 53%, rgba(250, 249, 246, 0.08) 74%, rgba(17, 16, 14, 0.06) 100%)",
           }}
         />
-        {/* Soft bottom ambient fade for stats row */}
+
+        {/* Mobile Subtle Architectural Canvas */}
+        <Box
+          display={{ base: "block", lg: "none" }}
+          position="absolute"
+          inset={0}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 86% 12%, rgba(152, 21, 9, 0.07) 0%, transparent 48%), radial-gradient(circle at 12% 88%, rgba(243, 234, 214, 0.85) 0%, transparent 52%), radial-gradient(rgba(51, 43, 31, 0.055) 1px, transparent 1px)",
+            backgroundSize: "100% 100%, 100% 100%, 28px 28px",
+          }}
+        />
+
+        {/* Soft Warm Bottom Transition into Post-Hero Vector Canvas */}
         <Box
           position="absolute"
           bottom={0}
           left={0}
           right={0}
-          h={{ base: "300px", md: "220px" }}
-          bgGradient="linear(to-t, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.8) 55%, transparent 100%)"
+          h={{ base: "140px", lg: "220px" }}
+          style={{
+            background:
+              "linear-gradient(to top, #faf9f6 0%, rgba(250, 249, 246, 0.86) 48%, transparent 100%)",
+          }}
           pointerEvents="none"
         />
       </Box>
@@ -123,36 +152,39 @@ export default function Hero({
         zIndex={10}
         w="full"
       >
-        <Grid templateColumns={{ base: "1fr", lg: "repeat(12, 1fr)" }} gap={8}>
-          <GridItem colSpan={{ base: 1, lg: 8 }}>
+        <Grid
+          templateColumns={{ base: "1fr", lg: "repeat(12, 1fr)" }}
+          gap={{ base: 8, lg: 10 }}
+          alignItems="center"
+        >
+          <GridItem colSpan={{ base: 1, lg: 7 }}>
             <VStack align="start" spacing={5} maxW="2xl">
-              {/* School Brand Accent Tag */}
+              {/* Architectural Crimson Eyebrow Pill */}
               <Flex
                 align="center"
-                gap={2}
+                gap={2.5}
                 px={4}
                 py={1.5}
-                bg="rgba(255, 255, 255, 0.9)"
-                backdropFilter="blur(10px)"
-                boxShadow="sm"
+                bg="rgba(255, 255, 255, 0.92)"
+                backdropFilter="blur(12px)"
+                boxShadow="0 4px 16px -4px rgba(51, 43, 31, 0.08)"
                 rounded="full"
-                border="1px solid rgba(0, 32, 69, 0.15)"
+                border="1px solid #e7e0d2"
                 w="fit-content"
               >
                 <Box
-                  as="span"
-                  className="material-symbols-outlined"
-                  color="#002045"
-                  fontSize="16px"
-                >
-                  location_on
-                </Box>
+                  w={2}
+                  h={2}
+                  rounded="full"
+                  bg="#981509"
+                  boxShadow="0 0 0 3px rgba(152, 21, 9, 0.14)"
+                />
                 <Text
-                  fontSize={{ base: "xs", sm: "sm" }}
-                  fontWeight="bold"
-                  color="#002045"
+                  fontSize={{ base: "11px", sm: "xs" }}
+                  fontWeight="700"
+                  color="#332b1f"
                   textTransform="uppercase"
-                  letterSpacing="wider"
+                  letterSpacing="0.12em"
                 >
                   {badgeText}
                 </Text>
@@ -160,26 +192,27 @@ export default function Hero({
 
               <Heading
                 as="h1"
-                fontSize={{ base: "32px", sm: "44px", md: "5xl", lg: "64px" }}
+                fontSize={{ base: "32px", sm: "44px", md: "52px", lg: "62px" }}
                 fontWeight="800"
-                color="#002045"
-                lineHeight="1.1"
-                letterSpacing="tight"
+                color="#332b1f"
+                lineHeight="1.08"
+                letterSpacing="-0.03em"
                 dangerouslySetInnerHTML={{ __html: titleHtml }}
               />
 
               <Text
                 fontSize={{ base: "md", sm: "lg", md: "xl" }}
-                color="#002045"
-                lineHeight="1.6"
-                fontWeight="600"
+                color="#574d40"
+                lineHeight="1.65"
+                fontWeight="500"
+                maxW="xl"
               >
                 {description}
               </Text>
 
               <HStack
                 spacing={4}
-                pt={4}
+                pt={3}
                 w="full"
                 flexDir={{ base: "column", sm: "row" }}
                 align="flex-start"
@@ -187,23 +220,23 @@ export default function Hero({
                 <ChakraLink
                   as={Link}
                   href={applyUrl && applyUrl !== "#" ? applyUrl : "/apply"}
-                  px={10}
-                  py={5}
-                  bg="#ffb800"
-                  color="#002045"
-                  fontWeight="bold"
+                  px={9}
+                  py={4}
+                  bg="#981509"
+                  color="#ffffff"
+                  fontWeight="700"
                   rounded="full"
-                  transition="all 0.3s"
-                  boxShadow="0 4px 14px rgba(255, 184, 0, 0.4)"
+                  transition="all 0.25s ease"
+                  boxShadow="0 10px 26px -6px rgba(152, 21, 9, 0.38)"
                   _hover={{
-                    bg: "#e6a600",
+                    bg: "#7c1006",
                     transform: "translateY(-2px)",
-                    boxShadow: "0 6px 20px rgba(255, 184, 0, 0.5)",
+                    boxShadow: "0 14px 32px -6px rgba(152, 21, 9, 0.48)",
                     textDecoration: "none",
                   }}
                   w={{ base: "full", sm: "auto" }}
                   textAlign="center"
-                  fontSize="lg"
+                  fontSize={{ base: "md", md: "lg" }}
                 >
                   Поступить в школу →
                 </ChakraLink>
@@ -212,22 +245,20 @@ export default function Hero({
                   href={targetVideoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  px={10}
-                  py={5}
-                  bg="white"
-                  backdropFilter="blur(10px)"
-                  color="#002045"
-                  fontWeight="bold"
+                  px={8}
+                  py={4}
+                  bg="rgba(255, 255, 255, 0.92)"
+                  backdropFilter="blur(12px)"
+                  color="#332b1f"
+                  fontWeight="700"
                   rounded="full"
-                  border="1px solid"
-                  borderColor="rgba(0, 32, 69, 0.15)"
-                  boxShadow="sm"
-                  transition="all 0.3s"
+                  border="1px solid #d5cab6"
+                  boxShadow="0 4px 16px -4px rgba(51, 43, 31, 0.08)"
+                  transition="all 0.25s ease"
                   _hover={{
-                    bg: "gray.50",
+                    bg: "#f3ead6",
                     transform: "translateY(-2px)",
-                    boxShadow: "md",
-                    borderColor: "rgba(0, 32, 69, 0.3)",
+                    borderColor: "#981509",
                     textDecoration: "none",
                   }}
                   w={{ base: "full", sm: "auto" }}
@@ -235,14 +266,14 @@ export default function Hero({
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
-                  fontSize="lg"
+                  fontSize={{ base: "md", md: "lg" }}
                   cursor="pointer"
                 >
                   <Box
                     as="span"
                     className="material-symbols-outlined"
                     mr={2}
-                    color="#002045"
+                    color="#981509"
                   >
                     play_circle
                   </Box>
@@ -251,52 +282,113 @@ export default function Hero({
               </HStack>
             </VStack>
           </GridItem>
+
+          {/* Mobile & Tablet Architectural Framed Panda Showcase */}
+          {!isVideo && (
+            <GridItem
+              display={{ base: "block", lg: "none" }}
+              colSpan={1}
+            >
+              <Box
+                position="relative"
+                rounded="2xl"
+                overflow="hidden"
+                border="1px solid #e7e0d2"
+                bg="#f3ead6"
+                boxShadow="0 18px 40px -14px rgba(51, 43, 31, 0.16)"
+              >
+                <Box
+                  as="img"
+                  src={finalImageUrl}
+                  alt="New Generation School Mascot"
+                  w="full"
+                  h={{ base: "220px", sm: "280px" }}
+                  objectFit="cover"
+                  objectPosition="62% 28%"
+                  style={{ filter: "saturate(0.94) contrast(1.03)" }}
+                />
+                <Flex
+                  position="absolute"
+                  bottom={3}
+                  left={3}
+                  align="center"
+                  gap={2}
+                  px={3}
+                  py={1}
+                  rounded="full"
+                  bg="rgba(17, 16, 14, 0.82)"
+                  backdropFilter="blur(8px)"
+                  border="1px solid rgba(243, 234, 214, 0.18)"
+                >
+                  <Box w={1.5} h={1.5} rounded="full" bg="#b82316" />
+                  <Text
+                    fontSize="10px"
+                    fontWeight="700"
+                    color="#f3ead6"
+                    letterSpacing="0.1em"
+                    textTransform="uppercase"
+                  >
+                    NGS · SINCE 2019
+                  </Text>
+                </Flex>
+              </Box>
+            </GridItem>
+          )}
         </Grid>
 
-        {/* Stats Row - Clean floating grid without box */}
+        {/* Architectural Stats Strip */}
         <Grid
           templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
-          gap={{ base: 4, sm: 6, md: 8 }}
-          mt={{ base: 10, md: 16 }}
-          pt={{ base: 6, md: 10 }}
-          borderTop="1px solid"
-          borderColor="rgba(0, 32, 69, 0.15)"
+          gap={{ base: 4, sm: 5, md: 6 }}
+          mt={{ base: 8, md: 14 }}
+          pt={{ base: 6, md: 8 }}
+          borderTop="1px solid #e7e0d2"
         >
           {stats.map((stat, idx) => (
             <GridItem key={idx}>
-              <Flex align="center" gap={4}>
+              <Flex
+                align="center"
+                gap={3.5}
+                p={{ base: 3, md: 3.5 }}
+                rounded="2xl"
+                bg="rgba(255, 255, 255, 0.82)"
+                backdropFilter="blur(12px)"
+                border="1px solid #e7e0d2"
+                boxShadow="0 4px 16px -6px rgba(51, 43, 31, 0.06)"
+              >
                 <Flex
-                  w={12}
-                  h={12}
-                  rounded="full"
-                  bg="white"
-                  boxShadow="sm"
+                  w={{ base: 10, md: 12 }}
+                  h={{ base: 10, md: 12 }}
+                  rounded="xl"
+                  bg="#fbf1f0"
                   align="center"
                   justify="center"
-                  color="#002045"
+                  color="#981509"
                   flexShrink={0}
-                  border="1px solid"
-                  borderColor="rgba(0, 32, 69, 0.12)"
+                  border="1px solid rgba(152, 21, 9, 0.14)"
                 >
-                  <Box as="span" className="material-symbols-outlined">
+                  <Box as="span" className="material-symbols-outlined" fontSize={{ base: "20px", md: "22px" }}>
                     {stat.icon}
                   </Box>
                 </Flex>
-                <Box>
+                <Box minW={0}>
                   <Text
-                    fontSize="2xl"
+                    fontSize={{ base: "xl", md: "2xl" }}
                     fontWeight="800"
-                    color="#002045"
-                    lineHeight="1.2"
+                    color="#332b1f"
+                    lineHeight="1.15"
+                    letterSpacing="-0.02em"
                   >
                     {stat.value}
                   </Text>
                   <Text
-                    fontSize="xs"
-                    color="#002045"
+                    fontSize="11px"
+                    color="#6b6154"
                     textTransform="uppercase"
-                    letterSpacing="wide"
+                    letterSpacing="0.04em"
                     fontWeight="700"
+                    lineHeight="1.25"
+                    mt={0.5}
                   >
                     {stat.label}
                   </Text>
