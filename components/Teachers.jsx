@@ -87,7 +87,7 @@ export default function Teachers({
     }
     if (url.startsWith("/")) {
       const apiBase = process.env.NEXT_PUBLIC_API_URL 
-        ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "") 
+        ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "") 
         : "https://api.new-generation-school.uz";
       return apiBase + url;
     }

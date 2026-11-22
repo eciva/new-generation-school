@@ -48,7 +48,7 @@ export default function Hero({
       finalImageUrl = imageUrl;
     } else if (imageUrl.startsWith("/")) {
       const backendBase = process.env.NEXT_PUBLIC_API_URL
-        ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
+        ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "")
         : "https://api.new-generation-school.uz";
       finalImageUrl = `${backendBase}${imageUrl}`;
     } else {

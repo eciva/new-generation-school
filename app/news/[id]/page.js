@@ -58,7 +58,7 @@ export default function SingleNewsPage() {
   const finalImageUrl = article?.coverImage
     ? (article.coverImage.startsWith("/")
         ? (process.env.NEXT_PUBLIC_API_URL
-            ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
+            ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "")
             : "https://api.new-generation-school.uz") + article.coverImage
         : article.coverImage)
     : "/bg.png";

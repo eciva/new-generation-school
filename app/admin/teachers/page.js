@@ -349,7 +349,7 @@ export default function AdminTeachersPage() {
     if (url.startsWith("/images/") || url.startsWith("data:")) return url;
     if (url.startsWith("/")) {
       const base = process.env.NEXT_PUBLIC_API_URL
-        ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
+        ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "")
         : "https://api.new-generation-school.uz";
       return `${base}${url}`;
     }

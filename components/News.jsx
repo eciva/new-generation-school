@@ -69,7 +69,7 @@ export default function News({
         ) : (
           newsList.map((item, idx) => {
             const finalImageUrl = item.coverImage 
-              ? (item.coverImage.startsWith("/") ? (process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "") : "https://api.new-generation-school.uz") + item.coverImage : item.coverImage)
+              ? (item.coverImage.startsWith("/") ? (process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, "") : "https://api.new-generation-school.uz") + item.coverImage : item.coverImage)
               : "/bg.png";
             
             const [day, month] = formatDateParts(item.date || item.createdAt);

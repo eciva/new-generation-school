@@ -93,7 +93,7 @@ export default function AdminMediaList() {
             // Or the API URL env var. Let's assume URL includes the full path or we prepend the backend URL.
             // If item.url starts with /uploads, we need to prepend backend domain.
             const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.new-generation-school.uz/api';
-            const BASE_URL = API_URL.replace('/api', '');
+            const BASE_URL = API_URL.replace(/\/api\/?$/, '');
             const fullUrl = item.url.startsWith('/') ? `${BASE_URL}${item.url}` : item.url;
 
             return (
