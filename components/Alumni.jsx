@@ -320,7 +320,7 @@ export default function Alumni({
                   ];
                   const hasCustomImg = review.imageUrl && !review.imageUrl.includes("bg.png");
                   const finalImg = hasCustomImg 
-                    ? (review.imageUrl.startsWith("/") ? (process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "") : "https://new-generation-school.onrender.com") + review.imageUrl : review.imageUrl)
+                    ? (review.imageUrl.startsWith("/") ? (process.env.NEXT_PUBLIC_API_URL ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "") : "https://api.new-generation-school.uz") + review.imageUrl : review.imageUrl)
                     : studentAvatars[idx % studentAvatars.length];
 
                   return (

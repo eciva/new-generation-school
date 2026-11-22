@@ -1,5 +1,5 @@
-﻿export default function sitemap() {
-  const baseUrl = "https://new-generation-school-lovat.vercel.app";
+export default function sitemap() {
+  const baseUrl = "https://www.new-generation-school.uz";
   const now = new Date();
 
   return [

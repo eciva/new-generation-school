@@ -49,7 +49,7 @@ export default function Hero({
     } else if (imageUrl.startsWith("/")) {
       const backendBase = process.env.NEXT_PUBLIC_API_URL
         ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
-        : "https://new-generation-school.onrender.com";
+        : "https://api.new-generation-school.uz";
       finalImageUrl = `${backendBase}${imageUrl}`;
     } else {
       finalImageUrl = imageUrl;

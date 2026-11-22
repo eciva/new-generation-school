@@ -1,4 +1,4 @@
-﻿export default function robots() {
+export default function robots() {
   return {
     rules: [
       {
@@ -7,6 +7,6 @@
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: "https://new-generation-school-lovat.vercel.app/sitemap.xml",
+    sitemap: "https://www.new-generation-school.uz/sitemap.xml",
   };
 }

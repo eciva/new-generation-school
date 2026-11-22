@@ -30,7 +30,7 @@ const ComponentMap = {
 export const dynamic = "force-dynamic";
 
 async function getHomePageData() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://new-generation-school.onrender.com/api';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.new-generation-school.uz/api';
   try {
     const res = await fetch(`${API_URL}/site/home`, { 
       cache: 'no-store'

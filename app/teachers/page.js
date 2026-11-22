@@ -160,7 +160,7 @@ export default function TeachersPage() {
     if (url.startsWith("/")) {
       const base = process.env.NEXT_PUBLIC_API_URL
         ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
-        : "https://new-generation-school.onrender.com";
+        : "https://api.new-generation-school.uz";
       return `${base}${url}`;
     }
     return url;

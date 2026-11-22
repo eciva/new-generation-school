@@ -38,7 +38,7 @@ export default function AllNewsPage() {
     async function loadNews() {
       setLoading(true);
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://new-generation-school.onrender.com/api";
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.new-generation-school.uz/api";
         const query = new URLSearchParams({
           page: String(page),
           pageSize: "9",
@@ -263,7 +263,7 @@ export default function AllNewsPage() {
                   ? (item.coverImage.startsWith("/")
                       ? (process.env.NEXT_PUBLIC_API_URL
                           ? process.env.NEXT_PUBLIC_API_URL.replace("/api", "")
-                          : "https://new-generation-school.onrender.com") + item.coverImage
+                          : "https://api.new-generation-school.uz") + item.coverImage
                       : item.coverImage)
                   : "/bg.png";
 

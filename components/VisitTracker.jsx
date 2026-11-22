@@ -22,7 +22,7 @@ export default function VisitTracker() {
     lastTrackedRef.current = { path: pathname, timestamp: now };
 
     const API_URL =
-      process.env.NEXT_PUBLIC_API_URL || "https://new-generation-school.onrender.com/api";
+      process.env.NEXT_PUBLIC_API_URL || "https://api.new-generation-school.uz/api";
 
     const payload = {
       path: pathname || "/",
@@ -45,7 +45,7 @@ export default function VisitTracker() {
     if (typeof window === "undefined") return;
 
     const API_URL =
-      process.env.NEXT_PUBLIC_API_URL || "https://new-generation-school.onrender.com/api";
+      process.env.NEXT_PUBLIC_API_URL || "https://api.new-generation-school.uz/api";
 
     const handleClick = (e) => {
       const target = e.target.closest("a, button");

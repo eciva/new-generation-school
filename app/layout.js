@@ -16,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://new-generation-school-lovat.vercel.app"),
+  metadataBase: new URL("https://www.new-generation-school.uz"),
   title: {
     default: "New Generation School — Частная школа «Новое Поколение» Фергана",
     template: "%s | New Generation School",
@@ -55,7 +55,7 @@ export const metadata = {
     title: "New Generation School — Частная школа «Новое Поколение» Фергана",
     description:
       "Инновационная частная школа в Фергане: углубленное обучение, современные технологии, сильные наставники и подготовка к топовым мировым вузам.",
-    url: "https://new-generation-school-lovat.vercel.app",
+    url: "https://www.new-generation-school.uz",
     siteName: "New Generation School (НОУ «Новое Поколение»)",
     locale: "ru_RU",
     type: "website",
@@ -90,8 +90,8 @@ const jsonLd = {
     "New Generation School Fergana",
     "Частная школа Новое Поколение",
   ],
-  url: "https://new-generation-school-lovat.vercel.app",
-  logo: "https://new-generation-school-lovat.vercel.app/ЛОГО.png",
+  url: "https://www.new-generation-school.uz",
+  logo: "https://www.new-generation-school.uz/ЛОГО.png",
   description:
     "Ведущая инновационная частная школа в Фергане. Полный цикл качественного среднего и дошкольного образования.",
   address: {
