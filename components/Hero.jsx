@@ -19,7 +19,7 @@ export default function Hero({
   description = "Современная школа полного цикла с сильным преподавательским составом, современной образовательной средой и индивидуальным подходом к развитию каждого ученика.",
   applyUrl = "#",
   videoUrl = "https://youtu.be/GVJVB3wjtHc?feature=shared",
-  imageUrl = "/hero-panda.webp",
+  imageUrl = "/hero-owl.webp",
   stats = [
     { value: "15+", label: "лет успешной работы", icon: "workspace_premium" },
     { value: "40+", label: "квалифицированных преподавателей", icon: "school" },
@@ -29,16 +29,17 @@ export default function Hero({
 }) {
   const isVideo = imageUrl?.endsWith(".mp4") || imageUrl?.endsWith(".webm");
 
-  let finalImageUrl = "/hero-panda.webp";
+  let finalImageUrl = "/hero-owl.webp";
 
   if (imageUrl) {
     if (isVideo) {
       finalImageUrl = imageUrl;
     } else if (
       imageUrl === "/hero-panda.png" ||
+      imageUrl === "/hero-panda.webp" ||
       imageUrl === "/uploads/hero-panda.png"
     ) {
-      finalImageUrl = "/hero-panda.webp";
+      finalImageUrl = "/hero-owl.webp";
     } else if (
       imageUrl.startsWith("http://") ||
       imageUrl.startsWith("https://")
@@ -80,7 +81,7 @@ export default function Hero({
       pt={{ base: "108px", md: "126px", lg: "136px", "2xl": "148px" }}
       pb={{ base: 12, md: 16 }}
     >
-      {/* Desktop Full-Bleed Architectural Panda Backdrop */}
+      {/* Desktop Full-Bleed Architectural Eagle Owl Backdrop */}
       <Box position="absolute" inset={0} zIndex={0} bg="#faf9f6">
         {isVideo ? (
           <video
@@ -98,21 +99,18 @@ export default function Hero({
             inset={0}
             bgImage={`url('${finalImageUrl}')`}
             bgSize="cover"
-            bgPosition="72% center"
-            style={{
-              filter: "saturate(0.92) contrast(1.03) sepia(0.05)",
-            }}
+            bgPosition="center 22%"
           />
         )}
 
-        {/* Warm Editorial Parchment-to-Clear Veil (Desktop) */}
+        {/* Warm Editorial Ivory-to-Clear Veil (Desktop) */}
         <Box
           display={{ base: "none", lg: "block" }}
           position="absolute"
           inset={0}
           style={{
             background:
-              "linear-gradient(96deg, rgba(250, 249, 246, 0.98) 0%, rgba(250, 249, 246, 0.94) 37%, rgba(243, 234, 214, 0.62) 53%, rgba(250, 249, 246, 0.08) 74%, rgba(17, 16, 14, 0.06) 100%)",
+              "linear-gradient(96deg, rgba(250, 249, 246, 0.96) 0%, rgba(250, 249, 246, 0.80) 34%, rgba(250, 249, 246, 0.22) 50%, transparent 66%)",
           }}
         />
 
@@ -283,7 +281,7 @@ export default function Hero({
             </VStack>
           </GridItem>
 
-          {/* Mobile & Tablet Architectural Framed Panda Showcase */}
+          {/* Mobile & Tablet Architectural Framed Eagle Owl Mascot Showcase */}
           {!isVideo && (
             <GridItem
               display={{ base: "block", lg: "none" }}
@@ -300,12 +298,11 @@ export default function Hero({
                 <Box
                   as="img"
                   src={finalImageUrl}
-                  alt="New Generation School Mascot"
+                  alt="New Generation School Owl Mascot"
                   w="full"
-                  h={{ base: "220px", sm: "280px" }}
+                  h={{ base: "240px", sm: "300px" }}
                   objectFit="cover"
-                  objectPosition="62% 28%"
-                  style={{ filter: "saturate(0.94) contrast(1.03)" }}
+                  objectPosition="76% 18%"
                 />
                 <Flex
                   position="absolute"
