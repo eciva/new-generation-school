@@ -302,7 +302,7 @@ export default function Hero({
                   w="full"
                   h={{ base: "240px", sm: "300px" }}
                   objectFit="cover"
-                  objectPosition="76% 18%"
+                  objectPosition="73% 16%"
                 />
                 <Flex
                   position="absolute"
